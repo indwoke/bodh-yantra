@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EEF2F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B111C" media="(prefers-color-scheme: dark)">
+<title>Bodh-Yantra · PRAJA</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Bodh-Yantra">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap">
+<style>:root{--bg:#EEF2F7; --card:#FFFFFF; --card2:#F6F8FB; --ink:#1C2330; --ink2:rgba(43,47,54,.64); --ink3:rgba(43,47,54,.40);--sep:rgba(36,69,112,.13); --fill:rgba(36,69,112,.07); --fill2:rgba(36,69,112,.12);--blue:#244570; --blue-text:#244570; --blue-tint:#E3EAF3; --orange:#E85B25; --orange-tint:#FCE8DF;--red:#D63B2F; --red-tint:#FBE4E1; --green:#2E9A5A; --green-tint:#DFF2E7; --amber:#B97A06; --amber-tint:#FBF0D8;--dev:#244570; --praj:#E85B25; --logo-word:#244570;--shadow:0 1px 2px rgba(20,35,60,.06),0 8px 24px rgba(20,35,60,.06);--r:16px;--sans:"Manrope",-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;--display:"Space Grotesk","Manrope",-apple-system,BlinkMacSystemFont,sans-serif;--mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;color-scheme:light;}@media (prefers-color-scheme:dark){:root{--bg:#0B111C; --card:#151D2B; --card2:#1B2536; --ink:#EDF1F7; --ink2:rgba(237,241,247,.64); --ink3:rgba(237,241,247,.38);--sep:rgba(160,185,220,.14); --fill:rgba(160,185,220,.09); --fill2:rgba(160,185,220,.16);--blue:#3D6AA6; --blue-text:#8FB3E6; --blue-tint:#1C2C45; --orange:#FF7440; --orange-tint:#3A2218;--red:#FF6B5E; --red-tint:#3B1D1B; --green:#5BCB88; --green-tint:#16301F; --amber:#F0B545; --amber-tint:#3A2E14;--dev:#6F9BD6; --praj:#FF7440; --logo-word:#FFFFFF; --shadow:none; color-scheme:dark;}}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}[hidden]{display:none!important}html,body{margin:0;height:100%}body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.35;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;background:none;border:0;padding:0}:focus-visible{outline:2px solid var(--orange);outline-offset:2px;border-radius:8px}.num{font-variant-numeric:tabular-nums}.logo{display:block;height:18px;width:auto}.brand,.sbrand{display:flex;align-items:center;gap:8px}.brand span,.sbrand span{font-family:var(--display);font-weight:700;font-size:15px;color:var(--orange);padding-left:8px;border-left:1.5px solid var(--sep);line-height:18px}.sbrand.big{justify-content:center;margin-bottom:22px}.sbrand.big .logo{height:30px}.sbrand.big span{font-size:24px;line-height:30px;padding-left:12px}/* layout */.app{display:flex;min-height:100%}.sidebar{display:none}.main{flex:1;min-width:0;padding-inline:16px;padding-bottom:calc(130px + env(safe-area-inset-bottom,0px))}.col{max-width:820px;margin:0 auto}.nav{position:sticky;top:0;z-index:20;margin-inline:-16px;padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 8px;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:.5px solid transparent;transition:border-color .2s}.nav.scrolled{border-bottom-color:var(--sep)}.nav .small-title{font-weight:700;font-size:17px;opacity:0;transition:opacity .2s;position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;pointer-events:none}.nav.scrolled .small-title{opacity:1}.navr{display:flex;align-items:center;gap:10px;margin-left:auto}.sync{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);font-weight:600}.sync i{width:7px;height:7px;border-radius:50%;background:var(--ink3)}.sync i.ok{background:var(--green)} .sync i.warn{background:var(--amber)}.iconbtn{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:var(--blue-text);background:var(--fill)}.iconbtn svg{width:18px;height:18px}.iconbtn.spin svg{animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}h1.large{font-family:var(--display);font-size:34px;line-height:1.1;font-weight:700;letter-spacing:-.02em;margin:6px 0 10px}.scope{display:flex;gap:8px;overflow-x:auto;margin:0 -16px;padding:0 16px 2px;scrollbar-width:none}.scope::-webkit-scrollbar{display:none}.chip{flex:none;padding:6px 12px;border-radius:999px;background:var(--card);font-size:13px;font-weight:700;color:var(--ink2);box-shadow:0 0 0 .5px var(--sep);white-space:nowrap}.chip[aria-pressed="true"]{background:var(--blue);color:#fff;box-shadow:none}.chip.o[aria-pressed="true"]{background:var(--orange)}.seg{display:flex;background:var(--fill);border-radius:10px;padding:2px}.seg button{flex:1;padding:7px 6px;border-radius:8px;font-size:14px;font-weight:700;white-space:nowrap}.seg button[aria-pressed="true"]{background:var(--card);box-shadow:0 1px 3px rgba(0,0,0,.12),0 0 0 .5px rgba(0,0,0,.04)}/* cards */.card{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:16px}.stack{display:grid;gap:12px;margin-top:16px}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ctitle{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:0 0 12px}.ctitle h2{font-family:var(--display);font-size:18px;font-weight:700;margin:0;letter-spacing:-.01em}.ctitle small,.ctitle button{font-size:13px;font-weight:700;color:var(--ink3)}.ctitle button{color:var(--blue-text)}/* hero */.hero{background:linear-gradient(145deg,#244570 0%,#1B3556 100%);color:#fff;border-radius:20px;padding:18px 18px 16px;box-shadow:0 10px 30px rgba(36,69,112,.28);position:relative;overflow:hidden}.hero::after{content:"";position:absolute;right:-40px;top:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(232,91,37,.55),rgba(232,91,37,0) 70%)}.hero .lbl{font-size:13px;font-weight:700;opacity:.72;text-transform:uppercase;letter-spacing:.06em}.hero .big{font-family:var(--display);font-size:40px;font-weight:700;letter-spacing:-.02em;line-height:1.05;margin:6px 0 4px}.hero .big small{font-size:22px;opacity:.7}.hero .sub{font-size:14px;font-weight:600;opacity:.78}.hero .bar{height:8px;border-radius:4px;background:rgba(255,255,255,.16);margin:16px 0 8px;overflow:hidden}.hero .bar i{display:block;height:100%;border-radius:4px;background:var(--orange);min-width:3px}.hero .barl{display:flex;justify-content:space-between;font-size:13px;font-weight:700;opacity:.85}/* kpis */.kpi{text-align:left;display:flex;flex-direction:column;gap:6px;padding:14px;transition:transform .12s}.kpi:active{transform:scale(.98)}.kpi .ic{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:#fff}.kpi .ic svg{width:16px;height:16px}.kpi b{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.01em}.kpi span{font-size:13px;font-weight:700;color:var(--ink2)}/* donut + legend */.split{display:flex;align-items:center;gap:18px}.donut{width:132px;height:132px;flex:none}.donut text{font-family:var(--display);font-weight:700;fill:var(--ink)}.legend{flex:1;min-width:0;display:grid;gap:9px}.lg{display:grid;grid-template-columns:10px minmax(0,1fr) auto;gap:8px;align-items:center;font-size:14px;font-weight:600;text-align:left;width:100%}.lg i{width:10px;height:10px;border-radius:3px}.lg span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.lg b{font-weight:800;font-variant-numeric:tabular-nums}.lg em{font-style:normal;color:var(--ink3);font-weight:700;font-size:12px;margin-left:6px}/* bars */.bars{display:flex;align-items:flex-end;gap:10px;height:150px;padding-top:18px}.bcol{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end;min-width:0}.bcol .stk{width:100%;max-width:44px;border-radius:8px 8px 4px 4px;overflow:hidden;display:flex;flex-direction:column-reverse;background:var(--fill)}.bcol .stk i{display:block}.bcol small{font-size:12px;font-weight:700;color:var(--ink3)}.bcol b{font-size:11.5px;font-weight:800;color:var(--ink2);white-space:nowrap}/* attention */.alist{display:grid}.arow{display:flex;align-items:center;gap:12px;padding:10px 0;text-align:left;width:100%;position:relative}.arow+.arow{border-top:.5px solid var(--sep)}.arow .ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:none}.arow .ic svg{width:16px;height:16px}.arow div{flex:1;min-width:0}.arow div b{display:block;font-weight:700;font-size:15px}.arow div small{color:var(--ink2);font-weight:600;font-size:13px}.arow .v{font-weight:800;font-variant-numeric:tabular-nums}.chev{color:var(--ink3)} .chev svg{width:8px;height:14px;display:block}/* expense list */.tools{display:grid;gap:10px;margin-top:14px}.search{display:flex;align-items:center;gap:8px;background:var(--fill);border-radius:11px;padding:8px 10px;color:var(--ink3)}.search svg{width:16px;height:16px;flex:none}.search input{border:0;background:transparent;outline:0;flex:1;min-width:0;color:var(--ink);font-size:16px}.chips{display:flex;gap:8px;overflow-x:auto;margin:0 -16px;padding:0 16px 2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.month{margin-top:22px}.month h3{display:flex;justify-content:space-between;align-items:baseline;margin:0 4px 8px;font-family:var(--display);font-size:19px;font-weight:700}.month h3 small{font-family:var(--sans);font-size:14px;color:var(--ink2);font-weight:800;font-variant-numeric:tabular-nums}.list{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}.ex{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 14px 11px 12px;width:100%;text-align:left;position:relative}.ex+.ex::before{content:"";position:absolute;top:0;left:58px;right:0;height:.5px;background:var(--sep)}.ex:active{background:var(--fill)}.cat{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:#fff;flex:none}.cat svg{width:19px;height:19px}.ex .t{font-weight:700;font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ex .m{display:flex;flex-wrap:wrap;gap:3px 8px;margin-top:3px;font-size:12.5px;color:var(--ink2);font-weight:600;align-items:center}.ex .a{font-weight:800;font-variant-numeric:tabular-nums;text-align:right;font-size:15.5px}.ex .a small{display:block;font-size:11.5px;color:var(--ink3);font-weight:700;margin-top:2px}.ex.void .t,.ex.void .a{text-decoration:line-through;color:var(--ink3)}.tag{padding:1px 6px;border-radius:6px;font-size:11.5px;font-weight:800}.tag.src{background:var(--blue-tint);color:var(--blue-text)}.tag.warn{background:var(--amber-tint);color:var(--amber)}.tag.ok{background:var(--green-tint);color:var(--green)}.tag.red{background:var(--red-tint);color:var(--red)}.clip{width:13px;height:13px;color:var(--green);vertical-align:-2px}.who{width:18px;height:18px;border-radius:50%;display:inline-grid;place-items:center;font-size:10px;font-weight:800;color:#fff}.who.dev{background:var(--dev)} .who.praj{background:var(--praj)}.sumbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px;padding:12px 14px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);font-weight:700;font-size:14px}.sumbar b{font-family:var(--display);font-size:18px}.sumbar button{color:#fff;background:var(--green);padding:7px 12px;border-radius:9px;font-weight:800;font-size:13px}.empty{padding:34px 16px;text-align:center;color:var(--ink2);font-weight:600}.empty b{display:block;font-family:var(--display);font-size:18px;color:var(--ink);margin-bottom:4px}/* budget */.bh{padding:14px 16px;display:grid;gap:8px;width:100%;text-align:left}.bh+.bh{border-top:.5px solid var(--sep)}.bh .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.bh .top b{font-weight:700;font-size:15.5px}.bh .top span{font-weight:800;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}.meter{height:8px;border-radius:4px;background:var(--fill2);overflow:hidden}.meter i{display:block;height:100%;border-radius:4px;min-width:2px}.bh .bot{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink2);font-weight:700;font-variant-numeric:tabular-nums}.kv{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink2);font-weight:600}.kv.s{color:var(--ink);font-weight:800}.kv .num{white-space:nowrap}@media (max-width:899px){.nav .small-title{display:none}}.note{font-size:13px;color:var(--ink2);font-weight:600;margin:10px 4px 0}/* more */.menu{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}.mi{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;text-align:left;position:relative;text-decoration:none;color:inherit}.mi+.mi::before{content:"";position:absolute;top:0;left:56px;right:0;height:.5px;background:var(--sep)}.mi .ic{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#fff;flex:none}.mi .ic svg{width:17px;height:17px}.mi div{flex:1;min-width:0}.mi div b{display:block;font-weight:700}.mi div small{font-size:13px;color:var(--ink2);font-weight:600}.mi:active{background:var(--fill)}.flabel{font-size:13px;color:var(--ink2);font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin:22px 14px 8px}.log{font-size:13px;color:var(--ink2);font-weight:600;padding:10px 14px;display:flex;justify-content:space-between;gap:10px}.log+.log{border-top:.5px solid var(--sep)}.log b{color:var(--ink);font-weight:700}/* fab + tabbar */.fab{position:fixed;right:16px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:25;display:flex;align-items:center;gap:8px;color:#fff;font-weight:800;font-size:16px;padding:10px 16px 10px 10px;border-radius:999px;background:var(--orange);box-shadow:0 8px 22px rgba(232,91,37,.38)}.fab .plus{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}.fab .plus svg{width:13px;height:13px}.fab:active{transform:scale(.96)}.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:24;display:flex;justify-content:space-around;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 80%,transparent);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--sep)}.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10.5px;font-weight:700;color:var(--ink3);padding:4px 0}.tabbar svg{width:24px;height:24px}.tabbar button[aria-pressed="true"]{color:var(--blue-text)}/* sheet */.backdrop{position:fixed;inset:0;z-index:50;background:rgba(10,18,32,.38);display:flex;align-items:flex-end;justify-content:center;animation:fade .2s}@keyframes fade{from{opacity:0}}.sheet{background:var(--bg);width:100%;max-width:620px;max-height:calc(100% - env(safe-area-inset-top,0px) - 24px);border-radius:14px 14px 0 0;display:flex;flex-direction:column;animation:up .32s cubic-bezier(.2,.9,.25,1);box-shadow:0 -10px 40px rgba(0,0,0,.2)}.sheet.wide{max-width:760px}@keyframes up{from{transform:translateY(100%)}}.grab{width:36px;height:5px;border-radius:3px;background:var(--ink3);opacity:.5;margin:6px auto 0}.sheet header{display:flex;align-items:center;justify-content:space-between;padding:8px 16px 10px;gap:8px}.sheet header h3{margin:0;font-size:17px;font-weight:800;text-align:center;flex:1}.sheet header button{color:var(--blue-text);font-size:17px;font-weight:600;min-width:64px;text-align:left}.sheet header button.strong{font-weight:800;text-align:right}.sheet header button:disabled{opacity:.4}.sheet .body{overflow-y:auto;padding:0 16px calc(24px + env(safe-area-inset-bottom,0px));-webkit-overflow-scrolling:touch}.amt{display:flex;align-items:center;justify-content:center;gap:4px;padding:14px 0 6px}.amt span{font-family:var(--display);font-size:34px;font-weight:700;color:var(--ink3)}.amt input{font-family:var(--display);font-size:46px;font-weight:700;border:0;background:transparent;outline:0;width:100%;max-width:280px;text-align:center;letter-spacing:-.02em;font-variant-numeric:tabular-nums;padding:0}.catpick{display:flex;gap:8px;overflow-x:auto;margin:6px -16px 0;padding:4px 16px 6px;scrollbar-width:none}.catpick::-webkit-scrollbar{display:none}.catpick button{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px;width:76px;font-size:11.5px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.2}.catpick .cat{width:48px;height:48px;border-radius:15px;opacity:.38;transition:opacity .15s,transform .15s}.catpick .cat svg{width:23px;height:23px}.catpick button[aria-pressed="true"]{color:var(--ink)}.catpick button[aria-pressed="true"] .cat{opacity:1;transform:scale(1.06);box-shadow:0 6px 14px rgba(20,35,60,.18)}.fgroup{background:var(--card);border-radius:12px;margin-top:14px;overflow:hidden}.fgroup .sep{height:.5px;background:var(--sep);margin-left:14px}.frow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 14px;min-height:46px}.frow label{font-weight:600;flex:none}.frow input,.frow select{border:0;background:transparent;outline:0;text-align:right;font-weight:600;color:var(--ink2);min-width:0;flex:1;font-size:16px;-webkit-appearance:none;appearance:none;padding:4px 0}.frow select{direction:rtl;cursor:pointer}.frow input[type=date]{flex:none;background:var(--fill);border-radius:8px;padding:6px 10px;color:var(--ink)}.frow a{color:var(--blue-text);font-weight:700;text-decoration:none}.fgroup textarea{display:block;width:100%;border:0;background:transparent;padding:12px 14px;resize:none;outline:0;font-size:16px;min-height:70px}.pick{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.pick button{padding:6px 11px;border-radius:999px;background:var(--fill);font-size:13.5px;font-weight:700;color:var(--ink2)}.pick button[aria-pressed="true"]{background:var(--blue);color:#fff}.receipt{display:flex;align-items:center;gap:12px;padding:12px 14px}.receipt .thumb{width:46px;height:46px;border-radius:10px;background:var(--fill);display:grid;place-items:center;color:var(--ink3);flex:none;overflow:hidden}.receipt .thumb svg{width:22px;height:22px}.receipt .thumb img{width:100%;height:100%;object-fit:cover}.receipt div{flex:1;min-width:0}.receipt div b{display:block;font-weight:700}.receipt div small{color:var(--ink2);font-weight:600;font-size:13px}.btn{padding:8px 13px;border-radius:10px;background:var(--blue-tint);color:var(--blue-text);font-weight:800;font-size:14px;white-space:nowrap;display:inline-block;text-decoration:none}.btn.solid{background:var(--blue);color:#fff}.btn.o{background:var(--orange);color:#fff}.btn:disabled{opacity:.45}.meta{font-size:12.5px;color:var(--ink3);text-align:center;margin-top:14px;font-weight:600;line-height:1.5}.danger{color:var(--red);font-weight:700;width:100%;text-align:center;padding:13px}.confirm{display:flex;gap:8px;padding:10px}.confirm button{flex:1;padding:11px;border-radius:10px;font-weight:800}.confirm .yes{background:var(--red);color:#fff} .confirm .no{background:var(--fill)}/* import */.drop{display:flex;flex-direction:column;align-items:center;gap:8px;padding:28px 16px;border:2px dashed var(--sep);border-radius:16px;background:var(--card);text-align:center;margin-top:14px;cursor:pointer}.drop svg{width:34px;height:34px;color:var(--blue-text)}.drop b{font-weight:800;font-size:16px}.drop small{color:var(--ink2);font-weight:600;font-size:13px}.maprow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 14px;min-height:44px}.maprow label{font-weight:600}.maprow select{border:0;background:var(--fill);border-radius:8px;padding:6px 10px;font-weight:600;max-width:60%;-webkit-appearance:none;appearance:none}.prow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 14px;cursor:pointer}.prow+.prow{border-top:.5px solid var(--sep)}.prow input{width:20px;height:20px;accent-color:var(--blue)}.prow .t{font-weight:700;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.prow .m{font-size:12.5px;color:var(--ink2);font-weight:600;margin-top:2px}.prow .a{font-weight:800;font-variant-numeric:tabular-nums}.prow.dup{background:var(--amber-tint)}.ibar{position:sticky;bottom:calc(-24px - env(safe-area-inset-bottom,0px));padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 14px;margin:14px -16px 0;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:.5px solid var(--sep);font-weight:700;font-size:14px}/* toast */.toast{position:fixed;left:50%;bottom:calc(132px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:60;background:rgba(28,35,48,.94);color:#fff;padding:10px 14px;border-radius:14px;font-size:14px;font-weight:700;display:flex;gap:14px;align-items:center;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);max-width:calc(100% - 32px);animation:fade .2s}.toast button{color:#FFB08F;font-weight:800}/* setup */.setup{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px 16px;overflow-y:auto}.setup .card{width:100%;max-width:380px;text-align:center;background:none;box-shadow:none;padding:0}.setup p{color:var(--ink2);margin:0 0 18px;font-weight:600}.setup p.small{font-size:14px;margin:0 0 12px}.setup .wait{color:var(--ink3);font-weight:700}.setup input{width:100%;border:0;background:var(--card);border-radius:12px;padding:13px 14px;margin-bottom:10px;box-shadow:var(--shadow);font-size:16px;outline:0}.setup input[type=password]{letter-spacing:.1em}.setup .go{width:100%;background:var(--blue);color:#fff;border-radius:12px;padding:14px;font-weight:800;font-size:17px;margin-top:6px}.setup .err{color:var(--red);font-weight:700;font-size:14px;min-height:20px;margin-top:10px}.setup .ver{margin-top:18px;font-size:12px;color:var(--ink3);font-weight:700;letter-spacing:.04em}.whoseg{display:flex;gap:10px;margin-bottom:14px}.whoseg button{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:12px;background:var(--card);box-shadow:var(--shadow);font-weight:800;font-size:16px}.whoseg button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--blue)}.whoseg i{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:12px;color:#fff}.whoseg .d{background:var(--dev)} .whoseg .p{background:var(--praj)}/* print statement */.print{display:none}@media print{@page{size:A4;margin:14mm}body{background:#fff;color:#1C2330}.app,.fab,.tabbar,.backdrop,.toast,.setup{display:none!important}.print{display:block;font-family:var(--sans);font-size:10.5pt}.print .ph{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid #244570;padding-bottom:8px;margin-bottom:12px}.print .ph .logo{height:22px}.print h1{font-family:var(--display);font-size:18pt;margin:10px 0 2px;color:#244570}.print .pm{color:#555;font-size:9.5pt}.print .ps{display:flex;gap:10px;margin:10px 0 14px}.print .ps div{flex:1;border:1px solid #D6DEE8;border-radius:6px;padding:8px}.print .ps small{display:block;color:#666;font-size:8.5pt;text-transform:uppercase;letter-spacing:.05em}.print .ps b{font-family:var(--display);font-size:14pt}.print h2{font-family:var(--display);font-size:12pt;color:#244570;margin:14px 0 6px}.print table{width:100%;border-collapse:collapse}.print th{background:#EAF0F6;color:#244570;text-align:left;font-size:8.5pt;text-transform:uppercase;letter-spacing:.04em;padding:5px 6px}.print td{border-bottom:1px solid #E3E8EF;padding:5px 6px;vertical-align:top}.print td.r,.print th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.print tr.tot td{font-weight:800;border-top:2px solid #244570;border-bottom:0}.print tr{page-break-inside:avoid}.print .pf{margin-top:18px;color:#777;font-size:8.5pt;display:flex;justify-content:space-between}}/* iPad / desktop */@media (min-width:900px){.sidebar{display:flex;flex-direction:column;gap:18px;width:280px;flex:none;position:sticky;top:0;height:100vh;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 22px) 16px 24px;background:var(--card2);border-right:.5px solid var(--sep)}.sbrand{margin:0 6px 6px}.sbrand .logo{height:20px}.snav{background:var(--card);border-radius:12px;overflow:hidden}.snav button{display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;font-weight:700;text-align:left;position:relative}.snav button+button::before{content:"";position:absolute;top:0;left:46px;right:0;height:.5px;background:var(--sep)}.snav button[aria-pressed="true"]{background:var(--blue-tint);color:var(--blue-text)}.snav svg{width:22px;height:22px}.scard{background:var(--card);border-radius:12px;padding:14px}.scard small{display:block;font-size:12px;font-weight:800;color:var(--ink3);text-transform:uppercase;letter-spacing:.05em}.scard b{display:block;font-family:var(--display);font-size:24px;margin:4px 0 2px}.scard span{font-size:13px;color:var(--ink2);font-weight:600}.main{padding-inline:32px}.nav{margin-inline:-32px;padding-inline:32px}.main .m-only{display:none}.tabbar{display:none}.fab{right:32px;bottom:28px}.backdrop{align-items:center}.sheet{border-radius:16px;max-height:88vh;animation:pop .25s cubic-bezier(.2,.9,.25,1)}.grab{display:none}@keyframes pop{from{transform:scale(.96);opacity:0}}.toast{bottom:32px}.ov{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}.ov .span2{grid-column:1 / -1}.ov>*{margin:0}.grid4{grid-template-columns:repeat(4,minmax(0,1fr))}.scope,.chips{margin-inline:0;padding-inline:0}}@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}:root{--by:var(--blue);--by-tint:var(--blue-tint);--part:#E3A93B}.lang{font-weight:800;font-size:13px;padding:5px 9px;border-radius:9px;background:var(--fill);color:var(--ink2)}.ex{display:flex;align-items:center;gap:12px;padding:12px 16px;width:100%;text-align:left;position:relative}.ex+.ex{border-top:.5px solid var(--sep)}.ex .t{font-weight:800;font-size:15.5px;line-height:1.25}.ex .m{font-size:13.5px;color:var(--ink2);font-weight:600;margin-top:2px}.ex.plan.late .when b{color:var(--red)}.when{display:flex;flex-direction:column;align-items:center;min-width:48px}.when b{font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}.when small{font-size:11.5px;color:var(--ink3);font-weight:700;text-transform:uppercase}.badge{min-width:34px;height:34px;border-radius:10px;background:var(--by-tint);color:var(--blue-text);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}.badge.late{background:var(--red-tint);color:var(--red)}.chev{color:var(--ink3);font-size:22px;font-weight:600}.dots{display:flex;gap:4px;margin-top:7px}.dots i,.legend2 i,.pgrid i,i.dot{width:14px;height:6px;border-radius:3px;display:inline-block;background:var(--fill2)}i.dot{width:10px;height:10px;border-radius:50%;flex:none}.st-ok{background:var(--green)!important}.st-part{background:var(--part)!important}.st-plan{background:var(--blue-text)!important;opacity:.6}.st-late{background:var(--red)!important}.st-todo{background:var(--fill2)}.legend2{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);font-weight:700;margin:0 4px 10px}.legend2 span{display:flex;align-items:center;gap:5px}.empty.small{padding:14px 16px;font-size:14px;text-align:left;background:var(--card);border-radius:var(--r);color:var(--ink2);font-weight:600}.banner{background:var(--amber-tint);color:var(--amber);font-weight:800;border-radius:12px;padding:10px 14px;margin:6px 0 12px;font-size:14px}.banner.warn{margin:10px 0 0}.back{color:var(--blue-text);font-weight:700;font-size:16px;margin:0 0 10px}.sc .sch{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.sc .sch b{font-size:18px;font-weight:800;display:block}.sc .sch small{color:var(--ink2);font-weight:600;font-size:13.5px}.code{font-family:var(--mono);font-weight:700;font-size:13px;background:var(--fill);padding:4px 8px;border-radius:8px;white-space:nowrap}.kv2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.kv2>div{display:flex;flex-direction:column;gap:2px;align-items:flex-start}.kv2 small{font-size:12px;color:var(--ink3);font-weight:800;text-transform:uppercase;letter-spacing:.03em}.kv2 b{font-weight:800}.kv2 .sm{font-size:12.5px;color:var(--ink2);font-weight:600}.kv2 .btn{margin-top:4px;padding:5px 10px;font-size:13px}.acts{display:flex;gap:8px;flex-wrap:wrap}.btn.solid{background:var(--by);color:#fff}.btn.o{background:var(--red-tint);color:var(--red)}.card.trk{margin-top:12px}.trkh b{font-size:17px;font-weight:800;display:block}.trkh small{color:var(--ink2);font-weight:700}.endl{display:flex;gap:8px;align-items:baseline;margin-top:10px;flex-wrap:wrap;font-size:14px;font-weight:700;color:var(--ink2)}.endl b{color:var(--ink)}.endl em{font-style:normal;padding:2px 8px;border-radius:8px;background:var(--green-tint);color:var(--green)}.endl em.warn{background:var(--amber-tint);color:var(--amber)}.endl em.bad,.bad{color:var(--red)}.endl em.bad{background:var(--red-tint)}.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}.kpi2{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:14px}.kpi2 b{font-family:var(--display);font-size:24px;display:block}.kpi2 span{font-weight:700;font-size:13.5px;color:var(--ink2)}.kpi2 small{display:block;color:var(--ink3);font-weight:700;font-size:12px;margin-top:2px}@media (min-width:900px){.kpis{grid-template-columns:repeat(4,1fr)}}.gridwrap{padding:6px 4px;overflow-x:auto}.pgrid{border-collapse:collapse;width:100%;font-size:12.5px}.pgrid th,.pgrid td{padding:6px 5px;text-align:center;white-space:nowrap}.pgrid thead th{color:var(--ink3);font-weight:800;font-size:11px;text-transform:uppercase}.pgrid tbody th{text-align:left;font-weight:600;color:var(--ink2)}.pgrid tbody th b{color:var(--ink);font-weight:800;display:inline-block;min-width:18px}.pgrid tbody tr{cursor:pointer;border-top:.5px solid var(--sep)}.pgrid i{width:18px;height:10px;border-radius:4px}.pgrid td.sm{font-weight:700;color:var(--ink2)}.chipsw{display:flex;gap:8px;flex-wrap:wrap}.frow.col{flex-direction:column;align-items:stretch;gap:8px;padding-top:10px;padding-bottom:10px}.frow.col label{width:auto}.pick{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start}.frow.col .pick{justify-content:flex-start}.pick button{padding:7px 11px;border-radius:9px;background:var(--fill);font-weight:700;font-size:14px}.pick button[aria-pressed="true"]{background:var(--by);color:#fff}.hint{font-size:13px;color:var(--ink2);font-weight:600;padding:0 14px 10px}.hint.ok{color:var(--green)}.hint.bad{color:var(--red)}.hint.warn{color:var(--amber)}.geo{margin:0 0 14px;padding:10px 14px;border-radius:12px;font-weight:700;font-size:14px;background:var(--fill);color:var(--ink2)}.geo.ok{background:var(--green-tint);color:var(--green)}.geo.warn{background:var(--amber-tint);color:var(--amber)}.geo.bad{background:var(--red-tint);color:var(--red)}.sheet .err{color:var(--red);font-weight:700;font-size:14px;min-height:20px;padding:0 4px 16px}.fgroup textarea{width:100%;border:0;background:none;padding:12px 14px;outline:0;resize:vertical}.receipt{cursor:pointer}.receipt .thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}.apv{align-items:flex-start}.apbtn{display:flex;flex-direction:column;gap:6px}.lnk{color:var(--blue-text);font-weight:700;font-size:13px;text-decoration:none;display:inline-block;margin-top:4px}.casecard{display:flex;align-items:center;gap:12px;margin-bottom:12px;border:2px solid var(--by)}.casecard small{color:var(--ink3);font-weight:800}.casecard b{font-family:var(--mono);font-size:20px}.casecard span{flex:1;font-weight:700;color:var(--ink2)}.casebig{font-family:var(--mono);font-size:40px;font-weight:700;text-align:center;padding:24px 0 8px;letter-spacing:.04em}.note{font-size:14px;color:var(--ink2);font-weight:600;margin:0 0 12px}.whogrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}.whogrid button{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--card);box-shadow:var(--shadow);text-align:left}.whogrid button[aria-pressed="true"]{outline:2px solid var(--by)}.whogrid i{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-style:normal;font-weight:800;flex:none;background:var(--by)}.whogrid i.fac{background:var(--orange)}.whogrid i.admin{background:var(--blue)}.whogrid span{font-weight:800;font-size:14px;line-height:1.2}.whogrid small{display:block;font-weight:700;color:var(--ink3);font-size:11.5px}.slang{display:flex;justify-content:center;gap:8px;margin-top:14px}.slang button{padding:6px 12px;border-radius:9px;font-weight:700;color:var(--ink2)}.slang button[aria-pressed="true"]{background:var(--fill2);color:var(--ink)}.setup .go{background:var(--by)}.ctitle button{color:var(--blue-text);font-weight:800}a.mi{text-decoration:none;color:inherit;display:flex}/* Facilitator Session Note: minimal styles. Swap colours for the app's own variables. */.fn-form { max-width: 640px; margin: 0 auto; padding: 12px 16px 48px; font: 16px/1.45 system-ui, sans-serif; }.fn-warn { background: #FFF4EC; border-left: 4px solid #E85B25; padding: 8px 12px; }.fn-section { border: 0; border-top: 2px solid #244570; margin: 20px 0 0; padding: 8px 0 0; }.fn-section legend { font-weight: 700; color: #244570; padding-right: 8px; }.fn-q { margin: 14px 0; }.fn-label { display: block; font-weight: 600; margin-bottom: 6px; }.fn-help { font-size: 14px; color: #555; margin: 0 0 6px; }.fn-options, .fn-scale { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }.fn-opt { display: inline-flex; align-items: center; gap: 6px; border: 1px solid #C9D3DF; border-radius: 8px; padding: 8px 10px; min-height: 44px; }.fn-anchor { font-size: 13px; color: #555; }.fn-form input[type=number], .fn-form input[type=time], .fn-form input[type=text], .fn-form textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid #C9D3DF; border-radius: 8px; box-sizing: border-box; }.fn-bad .fn-label { color: #B3261E; }.fn-err { color: #B3261E; font-size: 14px; margin: 4px 0 0; min-height: 0; }.fn-submit { margin-top: 20px; width: 100%; min-height: 48px; font: inherit; font-weight: 700; background: #244570; color: #fff; border: 0; border-radius: 10px; }.fn-submit:disabled { opacity: .5; }.fn-memory p { background: #EAF0F6; padding: 8px 10px; border-radius: 8px; }/* School coverage list */.cov-title { font: 700 20px/1.3 system-ui, sans-serif; color: #244570; margin: 12px 16px; }.cov-list { display: grid; gap: 10px; padding: 0 16px 32px; font: 15px/1.4 system-ui, sans-serif; }.cov-card { border: 1px solid #C9D3DF; border-left: 6px solid #9AA5B1; border-radius: 10px; padding: 10px 12px; }.cov-second_session_needed { border-left-color: #E85B25; }.cov-low_confidence { border-left-color: #C9A227; }.cov-ok { border-left-color: #2E7D5B; }.cov-head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }.cov-status { font-size: 13px; font-weight: 700; color: #244570; }.cov-due { margin: 4px 0; color: #E85B25; font-weight: 600; }.cov-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 6px; }.cov-item { background: #EAF0F6; border-radius: 8px; padding: 6px; text-align: center; }.cov-short { background: #FFF4EC; }.cov-num { display: block; font-weight: 700; }.cov-lbl { display: block; font-size: 12px; color: #555; }.cov-score, .cov-near { margin: 6px 0 0; font-size: 14px; }.cov-near { color: #B3261E; }.cov-head strong { white-space: nowrap; }/* Facilitator note + coverage: use Bodh-Yantra's own colours (light and dark) */.fn-form{font-family:var(--sans);color:var(--ink);padding:4px 0 24px;max-width:none}.fn-form h2{display:none}.fn-warn{background:var(--orange-tint);border-left-color:var(--orange);border-radius:10px;font-weight:600;font-size:14px;margin:0 0 12px}.fn-section{border-top-color:var(--blue-text)}.fn-section legend{color:var(--blue-text);font-size:15px}.fn-label{font-size:15px}.fn-help,.fn-anchor{color:var(--ink2)}.fn-opt{border-color:var(--sep);background:var(--card);font-weight:600;font-size:14.5px}.fn-opt:has(input:checked){border-color:var(--blue-text);background:var(--blue-tint)}.fn-form input[type=number],.fn-form input[type=time],.fn-form input[type=text],.fn-form textarea{background:var(--card);color:var(--ink);border-color:var(--sep)}.fn-bad .fn-label,.fn-err{color:var(--red)}.fn-submit{background:var(--blue)}.fn-memory h3{font-size:15px;margin:4px 0 6px}.fn-memory p{background:var(--fill);color:var(--ink);font-weight:600;font-size:14px}.fn-status{font-weight:700;color:var(--green)}.fnlang{display:flex;gap:4px}.fnlang button{padding:4px 8px;border-radius:8px;font-weight:800;font-size:13px;color:var(--ink2)}.fnlang button[aria-pressed="true"]{background:var(--fill2);color:var(--ink)}.cov-title{display:none}.cov-list{padding:0;font-family:var(--sans)}.cov-card{background:var(--card);border-color:var(--sep);box-shadow:var(--shadow)}.cov-status{color:var(--blue-text)}.cov-item{background:var(--fill)}.cov-short{background:var(--orange-tint)}.cov-lbl{color:var(--ink2)}.cov-near{color:var(--red)}.cov-name{display:block;font-size:12.5px;font-weight:600;color:var(--ink2)}.notedone{color:var(--green);font-weight:800;font-size:13px}</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="272.86 88.98 296.08 68.04"><path fill="var(--logo-word)" d="M 450.07 109.05 L 453.12 109.02 L 438.98 150.75 L 435.69 150.74 L 422.76 113.39 L 409.78 150.71 L 406.48 150.76 L 392.28 109.03 L 395.57 109.02 L 408.25 146.44 L 421.28 109.01 L 424.29 109.00 L 437.28 146.54 Z M 450.07 109.05 "/><path fill="var(--logo-word)" d="M 562.21 129.62 L 562.23 126.51 L 547.94 126.51 L 547.96 121.11 L 562.22 121.11 L 562.22 116.01 L 547.96 116.00 L 547.94 110.38 L 567.85 110.38 L 567.91 127.87 C 567.94 135.51 565.58 142.65 560.10 148.05 C 556.12 152.24 551.02 155.03 545.24 156.01 L 545.21 150.32 C 554.64 148.21 562.15 139.53 562.21 129.62 "/><path fill="var(--logo-word)" d="M 339.30 150.59 C 338.51 150.80 337.68 150.79 336.73 150.73 L 308.33 114.59 L 308.31 150.76 L 305.20 150.76 L 305.19 109.01 L 307.86 108.98 L 336.21 145.15 L 336.24 109.00 L 339.30 109.01 Z M 339.30 150.59 "/><path fill="var(--logo-word)" d="M 386.66 125.20 C 385.54 120.20 382.31 116.19 377.74 113.91 C 374.91 112.58 371.95 111.78 368.75 111.77 L 354.54 111.74 L 354.54 147.99 L 368.87 147.98 C 372.05 147.79 375.00 147.22 377.81 145.77 C 385.56 141.90 388.52 133.48 386.66 125.20 M 390.27 128.86 C 390.48 134.92 388.60 140.59 384.25 144.74 C 380.35 148.46 375.21 150.66 369.75 150.69 L 351.47 150.78 L 351.47 108.96 L 369.42 108.99 C 372.72 109.00 375.72 109.87 378.64 111.15 C 385.65 114.39 390.00 121.03 390.27 128.86 "/><path fill="var(--logo-word)" d="M 495.48 129.86 C 495.48 119.59 487.14 111.26 476.86 111.26 C 466.58 111.26 458.25 119.59 458.25 129.86 C 458.25 140.13 466.58 148.46 476.86 148.46 C 487.14 148.46 495.48 140.13 495.48 129.86 M 498.55 129.86 C 498.55 141.80 488.86 151.49 476.91 151.49 C 464.95 151.49 455.26 141.80 455.26 129.86 C 455.26 117.92 464.95 108.24 476.91 108.24 C 488.86 108.24 498.55 117.92 498.55 129.86 "/><path fill="var(--logo-word)" d="M 285.03 143.46 C 288.20 146.95 291.96 149.29 296.53 150.31 L 296.54 156.00 C 290.97 155.10 286.00 152.44 282.01 148.42 C 276.84 143.38 273.91 136.74 273.89 129.45 L 273.86 110.38 L 293.80 110.38 L 293.82 116.00 L 279.48 116.01 L 279.52 129.58 C 279.54 134.80 281.51 139.54 285.03 143.46 "/><path fill="var(--logo-word)" d="M 540.92 150.68 L 537.23 150.79 L 519.26 130.22 L 509.88 139.79 L 509.87 150.74 L 506.81 150.76 L 506.81 109 L 509.87 108.99 L 509.89 135.75 L 535.91 109.00 L 539.65 109.05 L 521.33 127.94 Z M 540.92 150.68 "/><path fill="#E85B25" d="M 289.63 96.96 C 289.63 100.83 286.50 103.96 282.63 103.96 C 278.77 103.96 275.64 100.83 275.64 96.96 C 275.64 93.10 278.77 89.98 282.63 89.98 C 286.50 89.98 289.63 93.10 289.63 96.96 "/><path fill="#E85B25" d="M 566.11 96.97 C 566.11 100.83 562.98 103.96 559.11 103.96 C 555.25 103.96 552.12 100.83 552.12 96.97 C 552.12 93.10 555.25 89.98 559.11 89.98 C 562.98 89.98 566.11 93.10 566.11 96.97 "/></symbol></svg><div class="app" id="app">
+  <aside class="sidebar">
+    <div class="sbrand"><svg class="logo" viewBox="0 0 296.08 68.04" role="img" aria-label="Indwoke"><use href="#lg" width="296.08" height="68.04"/></svg><span>Bodh-Yantra</span></div>
+    <nav class="snav" id="snav"></nav>
+    <div class="scard" id="sMe"></div>
+  </aside>
+  <main class="main" id="main">
+    <div class="col">
+      <div class="nav" id="nav">
+        <div class="m-only brand"><svg class="logo" viewBox="0 0 296.08 68.04" role="img" aria-label="Indwoke"><use href="#lg" width="296.08" height="68.04"/></svg><span>Bodh-Yantra</span></div>
+        <div class="navr">
+          <button class="lang" id="langBtn" aria-label="Language">हिं</button>
+          <div class="sync"><i id="dot"></i><span id="syncText"></span></div>
+          <button class="iconbtn" id="refresh" aria-label="Refresh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.34-5.66"/><path d="M20 4v5h-5"/></svg></button>
+        </div>
+      </div>
+      <h1 class="large" id="title"></h1>
+      <div id="view"></div>
+    </div>
+  </main>
+</div>
+<button class="fab" id="fab"><span class="plus"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span><b id="fabText"></b></button>
+<nav class="tabbar" id="tabbar"></nav>
+<div class="backdrop" id="backdrop" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" hidden></div>
+<div class="setup" id="setup" hidden>
+  <form class="card" id="setupForm" autocomplete="off">
+    <div class="sbrand big"><svg class="logo" viewBox="0 0 296.08 68.04" role="img" aria-label="Indwoke"><use href="#lg" width="296.08" height="68.04"/></svg><span>Bodh-Yantra</span></div>
+    <p id="sIntro"></p>
+    <div class="whogrid" id="whoSeg"></div>
+    <div id="urlBox" hidden>
+      <p class="small" id="sUrl"></p>
+      <input id="apiUrl" placeholder="https://script.google.com/macros/s/…/exec" inputmode="url">
+    </div>
+    <div class="wait" id="setupWait" hidden>…</div>
+    <div id="claimBox" hidden>
+      <p class="small" id="sClaim"></p>
+      <input id="invite" autocapitalize="characters" placeholder="BY-XXXX-XXXX">
+      <input id="newPass" type="password" autocomplete="new-password">
+      <input id="newPass2" type="password" autocomplete="new-password">
+    </div>
+    <div id="signinBox" hidden>
+      <input id="pass" type="password" autocomplete="current-password">
+    </div>
+    <button class="go" id="goBtn" type="submit"></button>
+    <div class="err" id="setupErr"></div>
+    <div class="slang"><button type="button" data-l="en">English</button><button type="button" data-l="hi">हिंदी</button></div>
+    <div class="ver" id="ver"></div>
+  </form>
+</div>
+
+<script>/**
+ * Facilitator Session Note: form schema v1 (fn-v1)
+ * Shared by the Apps Script backend (copy as FnSchema.gs) and the PWA (load as a script).
+ * Stored values are always the English codes below. Hindi and Marathi labels are DRAFTS
+ * pending back-translation (Prajakta, Devanand) before release.
+ */
+var FN_SCHEMA = (function () {
+  function o(v, en, hi, mr) { return { v: v, en: en, hi: hi, mr: mr }; }
+  var SCALE = { min: 1, max: 5 };
+  return {
+    version: 'fn-v1',
+    textMax: 300,
+    sections: [
+      { id: 'A', en: 'Session basics', hi: 'सत्र की बुनियादी जानकारी', mr: 'सत्राची मूलभूत माहिती' },
+      { id: 'B', en: 'Before the session', hi: 'सत्र से पहले', mr: 'सत्रापूर्वी' },
+      { id: 'C', en: 'During the session', hi: 'सत्र के दौरान', mr: 'सत्रादरम्यान' },
+      { id: 'D', en: 'Possible bias', hi: 'संभावित पूर्वाग्रह', mr: 'संभाव्य पूर्वग्रह' },
+      { id: 'E', en: 'Safeguarding', hi: 'सुरक्षा', mr: 'सुरक्षा' },
+      { id: 'F', en: 'Your read', hi: 'आपका आकलन', mr: 'तुमचे मूल्यांकन' }
+    ],
+    // A1 (session link) and facilitator_code are filled by the app, never typed.
+    fields: [
+      { id: 'role', q: 'A2', sec: 'A', type: 'single', required: true,
+        en: 'Your role in this session', hi: 'इस सत्र में आपकी भूमिका', mr: 'या सत्रातील तुमची भूमिका',
+        options: [o('lead', 'Lead facilitator', 'मुख्य फैसिलिटेटर', 'मुख्य फॅसिलिटेटर'), o('co', 'Co-facilitator', 'सह-फैसिलिटेटर', 'सह-फॅसिलिटेटर'), o('observer', 'Observer or volunteer', 'पर्यवेक्षक या स्वयंसेवक', 'निरीक्षक किंवा स्वयंसेवक')] },
+      { id: 'respondent_group', q: 'A3', sec: 'A', type: 'single', required: true,
+        en: 'Who were the respondents?', hi: 'उत्तरदाता कौन थे?', mr: 'उत्तरदाते कोण होते?',
+        options: [o('students', 'Students', 'विद्यार्थी', 'विद्यार्थी'), o('parents', 'Parents', 'अभिभावक', 'पालक'), o('teachers', 'Teachers', 'शिक्षक', 'शिक्षक'), o('staff', 'School staff', 'स्कूल स्टाफ', 'शाळेचे कर्मचारी'), o('mixed', 'Mixed', 'मिश्रित', 'मिश्र')] },
+      { id: 'headcount_band', q: 'A4', sec: 'A', type: 'single', required: true,
+        en: 'Roughly how many were present?', hi: 'लगभग कितने लोग उपस्थित थे?', mr: 'साधारण किती लोक उपस्थित होते?',
+        options: [o('1-10', '1–10', '1–10', '1–10'), o('11-25', '11–25', '11–25', '11–25'), o('26-50', '26–50', '26–50', '26–50'), o('51+', '51 or more', '51 या अधिक', '51 किंवा अधिक')] },
+      { id: 'gender_mix', q: 'A5', sec: 'A', type: 'single', required: true,
+        en: 'Gender mix in the room', hi: 'कमरे में लिंग अनुपात', mr: 'खोलीतील लिंग प्रमाण',
+        options: [o('mostly_women', 'Mostly women', 'अधिकतर महिलाएँ', 'बहुतेक महिला'), o('even', 'Roughly even', 'लगभग बराबर', 'साधारण समान'), o('mostly_men', 'Mostly men', 'अधिकतर पुरुष', 'बहुतेक पुरुष')] },
+      { id: 'forms_collected', q: 'A6', sec: 'A', type: 'int', required: true, min: 0, max: 500,
+        en: 'Forms collected', hi: 'एकत्र किए गए फ़ॉर्म', mr: 'जमा केलेले फॉर्म' },
+      { id: 'forms_flagged', q: 'A6', sec: 'A', type: 'int', required: true, min: 0, max: 500,
+        en: 'Forms you think are incomplete or invalid', hi: 'अधूरे या अमान्य लगने वाले फ़ॉर्म', mr: 'अपूर्ण किंवा अवैध वाटणारे फॉर्म' },
+      { id: 'form_language', q: 'A7', sec: 'A', type: 'single', required: true,
+        en: 'Language of the printed form', hi: 'छपे फ़ॉर्म की भाषा', mr: 'छापील फॉर्मची भाषा',
+        options: [o('en', 'English', 'अंग्रेज़ी', 'इंग्रजी'), o('hi', 'Hindi', 'हिंदी', 'हिंदी'), o('mr', 'Marathi', 'मराठी', 'मराठी'), o('other', 'Other', 'अन्य', 'इतर')] },
+      { id: 'readout_language', q: 'A8', sec: 'A', type: 'single', required: true,
+        en: 'Language used to read questions aloud', hi: 'प्रश्न पढ़कर सुनाने की भाषा', mr: 'प्रश्न मोठ्याने वाचण्याची भाषा',
+        options: [o('none', 'Not read aloud', 'पढ़कर नहीं सुनाया', 'वाचून दाखवले नाही'), o('en', 'English', 'अंग्रेज़ी', 'इंग्रजी'), o('hi', 'Hindi', 'हिंदी', 'हिंदी'), o('mr', 'Marathi', 'मराठी', 'मराठी'), o('ur', 'Urdu', 'उर्दू', 'उर्दू'), o('other', 'Other', 'अन्य', 'इतर')] },
+      { id: 'session_start', q: 'A9', sec: 'A', type: 'time', required: true,
+        en: 'Session start time', hi: 'सत्र शुरू होने का समय', mr: 'सत्र सुरू होण्याची वेळ' },
+      { id: 'session_end', q: 'A9', sec: 'A', type: 'time', required: true,
+        en: 'Session end time', hi: 'सत्र समाप्त होने का समय', mr: 'सत्र संपण्याची वेळ' },
+      { id: 'entry_mode', q: 'A10', sec: 'A', type: 'single', required: true,
+        en: 'Are you filling this right after the session, or later from memory?', hi: 'क्या आप यह सत्र के तुरंत बाद भर रहे हैं, या बाद में याद से?', mr: 'तुम्ही हे सत्रानंतर लगेच भरत आहात की नंतर आठवणीतून?',
+        options: [o('live', 'Right after the session', 'सत्र के तुरंत बाद', 'सत्रानंतर लगेच'), o('recalled', 'Later, from memory', 'बाद में, याद से', 'नंतर, आठवणीतून')] },
+      { id: 'venue', q: 'B1', sec: 'B', type: 'single', required: true,
+        en: 'Where was the session held?', hi: 'सत्र कहाँ हुआ?', mr: 'सत्र कुठे झाले?',
+        options: [o('classroom', 'Classroom', 'कक्षा', 'वर्ग'), o('hall', 'Hall', 'हॉल', 'सभागृह'), o('office', 'Office', 'कार्यालय', 'कार्यालय'), o('outdoors', 'Outdoors', 'बाहर', 'बाहेर'), o('other', 'Other', 'अन्य', 'इतर')] },
+      { id: 'privacy_score', q: 'B2', sec: 'B', type: 'scale', required: true, scale: SCALE,
+        en: "Could respondents see each other's answers?", hi: 'क्या उत्तरदाता एक-दूसरे के उत्तर देख सकते थे?', mr: 'उत्तरदात्यांना एकमेकांची उत्तरे दिसू शकत होती का?',
+        anchors: { en: ['Fully private', 'Easily seen'], hi: ['पूरी तरह निजी', 'आसानी से दिखते थे'], mr: ['पूर्णपणे खाजगी', 'सहज दिसत होती'] } },
+      { id: 'others_present', q: 'B3', sec: 'B', type: 'multi', required: true, exclusive: 'none',
+        en: 'Who else was in the room?', hi: 'कमरे में और कौन था?', mr: 'खोलीत आणखी कोण होते?',
+        options: [o('none', 'Nobody else', 'कोई नहीं', 'कोणीही नाही'), o('teacher', 'Teacher', 'शिक्षक', 'शिक्षक'), o('principal', 'Principal or head', 'प्रधानाचार्य या प्रमुख', 'मुख्याध्यापक किंवा प्रमुख'), o('staff', 'Other staff', 'अन्य स्टाफ', 'इतर कर्मचारी'), o('family', 'Family members', 'परिवार के सदस्य', 'कुटुंबातील सदस्य'), o('others', 'Others', 'अन्य', 'इतर')] },
+      { id: 'start_delay', q: 'B4', sec: 'B', type: 'single', required: true,
+        en: 'Did the session start on time?', hi: 'क्या सत्र समय पर शुरू हुआ?', mr: 'सत्र वेळेवर सुरू झाले का?',
+        options: [o('on_time', 'On time', 'समय पर', 'वेळेवर'), o('up_to_15', 'Up to 15 min late', '15 मिनट तक देर', '15 मिनिटांपर्यंत उशीर'), o('over_15', 'More than 15 min late', '15 मिनट से अधिक देर', '15 मिनिटांपेक्षा जास्त उशीर')] },
+      { id: 'noise_score', q: 'C1', sec: 'C', type: 'scale', required: true, scale: SCALE,
+        en: 'Noise and disturbance', hi: 'शोर और व्यवधान', mr: 'आवाज आणि व्यत्यय',
+        anchors: { en: ['Quiet', 'Very disruptive'], hi: ['शांत', 'बहुत व्यवधान'], mr: ['शांत', 'खूप व्यत्यय'] } },
+      { id: 'interruptions', q: 'C2', sec: 'C', type: 'multi', required: true, exclusive: 'none',
+        en: 'Interruptions', hi: 'रुकावटें', mr: 'अडथळे',
+        options: [o('none', 'None', 'कोई नहीं', 'काहीही नाही'), o('movement', 'People entering or leaving', 'लोगों का आना-जाना', 'लोकांची ये-जा'), o('phones', 'Phone calls', 'फ़ोन कॉल', 'फोन कॉल'), o('bells', 'Bells or announcements', 'घंटी या घोषणाएँ', 'घंटा किंवा घोषणा'), o('caregiving', 'Children or caregiving', 'बच्चे या देखभाल', 'मुले किंवा काळजी'), o('other', 'Other', 'अन्य', 'इतर')] },
+      { id: 'comprehension_score', q: 'C3', sec: 'C', type: 'scale', required: true, scale: SCALE,
+        en: 'How well did respondents understand the questions?', hi: 'उत्तरदाताओं ने प्रश्न कितनी अच्छी तरह समझे?', mr: 'उत्तरदात्यांना प्रश्न किती चांगले समजले?',
+        anchors: { en: ['Very poorly', 'Very well'], hi: ['बहुत कम', 'बहुत अच्छी तरह'], mr: ['खूप कमी', 'खूप चांगले'] } },
+      { id: 'items_reexplained', q: 'C4', sec: 'C', type: 'itemlist', required: false, min: 1, max: 200,
+        en: 'Which question numbers needed repeated explanation?', hi: 'किन प्रश्न संख्याओं को बार-बार समझाना पड़ा?', mr: 'कोणत्या प्रश्न क्रमांकांना पुन्हा समजावावे लागले?' },
+      { id: 'hostility', q: 'C5', sec: 'C', type: 'single', required: true,
+        en: 'Was there resistance or hostility?', hi: 'क्या विरोध या शत्रुता थी?', mr: 'विरोध किंवा शत्रुत्व होते का?',
+        options: [o('none', 'None', 'नहीं', 'नाही'), o('mild', 'Mild', 'हल्का', 'सौम्य'), o('strong', 'Strong', 'तीव्र', 'तीव्र')] },
+      { id: 'objections', q: 'C6', sec: 'C', type: 'multi', required: true, exclusive: 'none',
+        en: 'Objections raised', hi: 'उठाई गई आपत्तियाँ', mr: 'उपस्थित केलेले आक्षेप',
+        options: [o('none', 'None', 'कोई नहीं', 'काहीही नाही'), o('purpose', 'Purpose of survey', 'सर्वे का उद्देश्य', 'सर्वेक्षणाचा उद्देश'), o('privacy', 'Privacy', 'गोपनीयता', 'गोपनीयता'), o('sensitive', 'Topic too sensitive', 'विषय बहुत संवेदनशील', 'विषय खूप संवेदनशील'), o('length', 'Too long', 'बहुत लंबा', 'खूप लांब'), o('cultural', 'Cultural or religious', 'सांस्कृतिक या धार्मिक', 'सांस्कृतिक किंवा धार्मिक'), o('other', 'Other', 'अन्य', 'इतर')] },
+      { id: 'answer_sharing', q: 'C7', sec: 'C', type: 'single', required: true,
+        en: 'Did respondents discuss or copy answers?', hi: 'क्या उत्तरदाताओं ने उत्तरों पर चर्चा की या नकल की?', mr: 'उत्तरदात्यांनी उत्तरांवर चर्चा केली किंवा नक्कल केली का?',
+        options: [o('no', 'No', 'नहीं', 'नाही'), o('few', 'A few', 'कुछ ने', 'काहींनी'), o('many', 'Many', 'कई ने', 'अनेकांनी')] },
+      { id: 'engagement_score', q: 'C8', sec: 'C', type: 'scale', required: true, scale: SCALE,
+        en: 'Engagement level', hi: 'भागीदारी का स्तर', mr: 'सहभागाची पातळी',
+        anchors: { en: ['Disengaged', 'Fully engaged'], hi: ['उदासीन', 'पूरी तरह शामिल'], mr: ['उदासीन', 'पूर्णपणे सहभागी'] } },
+      { id: 'desirability_score', q: 'D1', sec: 'D', type: 'scale', required: true, scale: SCALE,
+        en: 'Did people seem to give answers they thought we wanted?', hi: 'क्या लोग वह उत्तर देते लगे जो उन्हें लगा हम सुनना चाहते हैं?', mr: 'आम्हाला हवी असतील अशी उत्तरे लोक देत आहेत असे वाटले का?',
+        anchors: { en: ['Not at all', 'Strongly'], hi: ['बिल्कुल नहीं', 'बहुत अधिक'], mr: ['अजिबात नाही', 'खूप जास्त'] } },
+      { id: 'authority_influence', q: 'D2', sec: 'D', type: 'single', required: true,
+        en: 'Did anyone in authority appear to influence answers?', hi: 'क्या किसी अधिकारी व्यक्ति ने उत्तरों को प्रभावित किया लगा?', mr: 'अधिकारपदावरील कोणी उत्तरांवर प्रभाव टाकला असे वाटले का?',
+        options: [o('no', 'No', 'नहीं', 'नाही'), o('possibly', 'Possibly', 'शायद', 'कदाचित'), o('clearly', 'Clearly', 'स्पष्ट रूप से', 'स्पष्टपणे')] },
+      { id: 'facilitator_lead', q: 'D3', sec: 'D', type: 'single', required: true,
+        en: 'Did you explain any question in a way that may have suggested an answer?', hi: 'क्या आपने कोई प्रश्न ऐसे समझाया जिससे उत्तर का संकेत मिला हो?', mr: 'तुम्ही एखादा प्रश्न असा समजावला का ज्यामुळे उत्तर सुचले असेल?',
+        options: [o('no', 'No', 'नहीं', 'नाही'), o('possibly', 'Possibly', 'शायद', 'कदाचित'), o('yes', 'Yes', 'हाँ', 'हो')] },
+      { id: 'disclosure', q: 'E1', sec: 'E', type: 'single', required: true,
+        en: 'Did anyone disclose harm during or after the session?', hi: 'क्या सत्र के दौरान या बाद किसी ने नुकसान/हानि के बारे में बताया?', mr: 'सत्रादरम्यान किंवा नंतर कोणी हानीबद्दल सांगितले का?',
+        help: { en: 'Record only that it happened. Never its content.', hi: 'केवल इतना दर्ज करें कि ऐसा हुआ। विवरण कभी नहीं।', mr: 'फक्त असे घडले एवढेच नोंदवा. तपशील कधीही नाही.' },
+        options: [o('no', 'No', 'नहीं', 'नाही'), o('yes', 'Yes', 'हाँ', 'हो')] },
+      { id: 'protocol_followed', q: 'E2', sec: 'E', type: 'single', required: false, requiredIf: { field: 'disclosure', equals: 'yes' }, showIf: { field: 'disclosure', equals: 'yes' },
+        en: 'Was the disclosure protocol followed?', hi: 'क्या प्रकटीकरण प्रोटोकॉल का पालन हुआ?', mr: 'प्रकटीकरण प्रोटोकॉल पाळला गेला का?',
+        options: [o('yes', 'Yes', 'हाँ', 'हो'), o('partly', 'Partly', 'आंशिक रूप से', 'अंशतः'), o('no', 'No', 'नहीं', 'नाही')] },
+      { id: 'help_requests_band', q: 'E3', sec: 'E', type: 'single', required: true,
+        en: 'How many people asked for help or contact details afterwards?', hi: 'बाद में कितने लोगों ने मदद या संपर्क जानकारी माँगी?', mr: 'नंतर किती लोकांनी मदत किंवा संपर्क माहिती मागितली?',
+        options: [o('0', '0', '0', '0'), o('1-2', '1–2', '1–2', '1–2'), o('3-5', '3–5', '3–5', '3–5'), o('6+', '6 or more', '6 या अधिक', '6 किंवा अधिक')] },
+      { id: 'data_confidence', q: 'F1', sec: 'F', type: 'single', required: true,
+        en: 'How much do you trust the data from this session?', hi: 'इस सत्र के डेटा पर आपको कितना भरोसा है?', mr: 'या सत्राच्या डेटावर तुमचा किती विश्वास आहे?',
+        options: [o('high', 'High', 'अधिक', 'जास्त'), o('medium', 'Medium', 'मध्यम', 'मध्यम'), o('low', 'Low', 'कम', 'कमी')] },
+      { id: 'stood_out', q: 'F2', sec: 'F', type: 'text', required: false,
+        en: 'What stood out, good or bad?', hi: 'क्या ख़ास लगा, अच्छा या बुरा?', mr: 'काय लक्षात राहिले, चांगले किंवा वाईट?' },
+      { id: 'next_facilitator', q: 'F3', sec: 'F', type: 'text', required: false,
+        en: 'What should the next facilitator at this site know?', hi: 'इस जगह अगले फैसिलिटेटर को क्या पता होना चाहिए?', mr: 'या ठिकाणच्या पुढच्या फॅसिलिटेटरला काय माहीत असावे?' },
+      { id: 'contradicts', q: 'F4', sec: 'F', type: 'text', required: false,
+        en: 'Did anything you saw contradict what the numbers may show?', hi: 'क्या आपने कुछ ऐसा देखा जो आँकड़ों से उलट हो सकता है?', mr: 'तुम्ही पाहिलेले काही आकड्यांच्या विरोधात जाऊ शकते का?' }
+    ],
+    ui: {
+      title: { en: 'Facilitator session note', hi: 'फैसिलिटेटर सत्र नोट', mr: 'फॅसिलिटेटर सत्र नोंद' },
+      noNames: { en: 'No names, phone numbers or details that could identify anyone.', hi: 'कोई नाम, फ़ोन नंबर या पहचान बताने वाली जानकारी नहीं।', mr: 'कोणतेही नाव, फोन नंबर किंवा ओळख पटवणारी माहिती नको.' },
+      submit: { en: 'Submit note', hi: 'नोट जमा करें', mr: 'नोंद जमा करा' },
+      saved: { en: 'Saved. It will sync when you are online.', hi: 'सहेजा गया। ऑनलाइन होने पर सिंक होगा।', mr: 'जतन केले. ऑनलाइन आल्यावर सिंक होईल.' },
+      fixErrors: { en: 'Please fix the highlighted answers.', hi: 'कृपया चिह्नित उत्तर ठीक करें।', mr: 'कृपया चिन्हांकित उत्तरे दुरुस्त करा.' },
+      siteMemory: { en: 'Notes from earlier facilitators at this site', hi: 'इस जगह के पिछले फैसिलिटेटरों के नोट', mr: 'या ठिकाणच्या आधीच्या फॅसिलिटेटरच्या नोंदी' }
+    }
+  };
+})();
+if (typeof module !== 'undefined') { module.exports = FN_SCHEMA; }
+
+/**
+ * Facilitator Session Note: shared logic (validation, personal-data check, review flags, comparison).
+ * Pure functions, no I/O. Runs in Apps Script (copy as FnCore.gs), the browser and Node tests.
+ */
+var FNCore = (function () {
+  var REVIEW_FLAGGED_SHARE = 0.10; // decided 2 Oct
+  var COMPARE_GAP = 2;             // decided 2 Oct
+  var LIMIT_DESIRABILITY = 4;
+
+  function isTime(s) { return typeof s === 'string' && /^([01]\d|2[0-3]):[0-5]\d$/.test(s); }
+  function minutes(s) { var p = s.split(':'); return Number(p[0]) * 60 + Number(p[1]); }
+  function codes(f) { return (f.options || []).map(function (x) { return x.v; }); }
+  function shown(f, note) { return !f.showIf || note[f.showIf.field] === f.showIf.equals; }
+  function required(f, note) {
+    if (f.requiredIf) return note[f.requiredIf.field] === f.requiredIf.equals;
+    return !!f.required;
+  }
+  function empty(v) { return v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0); }
+
+  /** Personal-data check for free text. Returns a list of reasons; empty list = clean. */
+  function piiCheck(text) {
+    var reasons = [];
+    if (!text) return reasons;
+    var t = String(text);
+    if (/[\w.+-]+@[\w-]+\.[\w.]+/.test(t)) reasons.push('email');
+    if (/(\+?91[\s-]?)?[6-9]\d{4}[\s-]?\d{5}/.test(t)) reasons.push('phone');
+    if (/\b\d{4}[\s-]?\d{4}[\s-]?\d{4}\b/.test(t)) reasons.push('id_number');
+    if (/\d{7,}/.test(t.replace(/[\s-]/g, ''))) reasons.push('long_number');
+    if (/\b(Mr|Mrs|Ms|Miss|Dr|Shri|Smt|Kumari|Sir|Madam|Ma'am)\.?\s+[A-Z][a-z]+/.test(t)) reasons.push('titled_name');
+    if (/(श्री|श्रीमती|कुमारी|सौ\.)\s*\S+/.test(t)) reasons.push('titled_name');
+    if (/\b(name is|named|called)\s+[A-Z][a-z]+/i.test(t)) reasons.push('named_person');
+    if (/(नाम|नाव)\s*(है|आहे)?\s*[:\-]?\s*\S+/.test(t)) reasons.push('named_person');
+    if (/\b(roll\s*(no|number)|class\s*\d+\s*[A-Z]\b|section\s+[A-Z]\b)/i.test(t)) reasons.push('class_detail');
+    return reasons.filter(function (r, i, a) { return a.indexOf(r) === i; });
+  }
+
+  /** Validate a note against the schema. Returns { ok, errors: [{field, code}] }. */
+  function validate(note, schema) {
+    var errors = [];
+    function err(field, code) { errors.push({ field: field, code: code }); }
+    schema.fields.forEach(function (f) {
+      var v = note[f.id];
+      if (!shown(f, note)) { if (!empty(v)) err(f.id, 'not_applicable'); return; }
+      if (empty(v)) { if (required(f, note)) err(f.id, 'required'); return; }
+      switch (f.type) {
+        case 'single':
+          if (codes(f).indexOf(v) < 0) err(f.id, 'invalid_option'); break;
+        case 'multi':
+          if (!Array.isArray(v)) { err(f.id, 'invalid_type'); break; }
+          if (v.some(function (x) { return codes(f).indexOf(x) < 0; })) err(f.id, 'invalid_option');
+          if (f.exclusive && v.indexOf(f.exclusive) >= 0 && v.length > 1) err(f.id, 'exclusive_conflict');
+          break;
+        case 'scale':
+          if (typeof v !== 'number' || v % 1 !== 0 || v < f.scale.min || v > f.scale.max) err(f.id, 'out_of_range'); break;
+        case 'int':
+          if (typeof v !== 'number' || v % 1 !== 0 || v < f.min || v > f.max) err(f.id, 'out_of_range'); break;
+        case 'time':
+          if (!isTime(v)) err(f.id, 'invalid_time'); break;
+        case 'itemlist':
+          if (!Array.isArray(v) || v.some(function (x) { return typeof x !== 'number' || x % 1 !== 0 || x < f.min || x > f.max; })) err(f.id, 'invalid_items');
+          break;
+        case 'text':
+          if (typeof v !== 'string') { err(f.id, 'invalid_type'); break; }
+          if (v.length > schema.textMax) err(f.id, 'too_long');
+          if (piiCheck(v).length) err(f.id, 'personal_data');
+          break;
+      }
+    });
+    if (typeof note.forms_flagged === 'number' && typeof note.forms_collected === 'number' && note.forms_flagged > note.forms_collected) err('forms_flagged', 'more_than_collected');
+    if (isTime(note.session_start) && isTime(note.session_end) && minutes(note.session_end) <= minutes(note.session_start)) err('session_end', 'end_before_start');
+    var known = schema.fields.map(function (f) { return f.id; });
+    Object.keys(note).forEach(function (k) { if (known.indexOf(k) < 0) err(k, 'unknown_field'); });
+    return { ok: errors.length === 0, errors: errors };
+  }
+
+  function sessionMinutes(note) {
+    if (!isTime(note.session_start) || !isTime(note.session_end)) return null;
+    return minutes(note.session_end) - minutes(note.session_start);
+  }
+
+  /** Review and limitations flags (rules in the doc, decided 2 Oct). */
+  function flags(note) {
+    var review = [], limits = [];
+    if (note.data_confidence === 'low') review.push('low_confidence');
+    if (note.forms_collected > 0 && note.forms_flagged / note.forms_collected > REVIEW_FLAGGED_SHARE) review.push('flagged_forms_over_10pct');
+    if (note.hostility === 'strong') review.push('strong_hostility');
+    if (note.desirability_score >= LIMIT_DESIRABILITY) limits.push('social_desirability');
+    if (note.authority_influence === 'clearly') limits.push('authority_influence');
+    var op = note.others_present || [];
+    if (op.indexOf('principal') >= 0 || op.indexOf('teacher') >= 0) limits.push('authority_present');
+    return { review: review, limitations: limits };
+  }
+
+  /** Compare notes from different facilitators on one session: 1-5 scales differing by >= 2. */
+  function compare(notes, schema) {
+    var scales = schema.fields.filter(function (f) { return f.type === 'scale'; }).map(function (f) { return f.id; });
+    var gaps = [];
+    if (!notes || notes.length < 2) return gaps;
+    scales.forEach(function (id) {
+      var vals = notes.map(function (n) { return n[id]; }).filter(function (v) { return typeof v === 'number'; });
+      if (vals.length < 2) return;
+      var gap = Math.max.apply(null, vals) - Math.min.apply(null, vals);
+      if (gap >= COMPARE_GAP) gaps.push({ field: id, gap: gap, values: vals });
+    });
+    return gaps;
+  }
+
+  /** Flat row for the sheet: fixed column order from the schema. */
+  function columns(schema) {
+    var cols = ['note_id', 'schema_version', 'submitted_at', 'session_key', 'institute_code', 'session_date', 'template_id', 'facilitator_code'];
+    schema.fields.forEach(function (f) { cols.push(f.id); });
+    return cols.concat(['session_minutes', 'review_flags', 'limitation_flags']);
+  }
+  function toRow(record, schema) {
+    return columns(schema).map(function (c) {
+      var v = record[c];
+      if (Array.isArray(v)) return v.join(',');
+      return v === undefined || v === null ? '' : v;
+    });
+  }
+
+  return { piiCheck: piiCheck, validate: validate, sessionMinutes: sessionMinutes, flags: flags, compare: compare,
+           columns: columns, toRow: toRow, REVIEW_FLAGGED_SHARE: REVIEW_FLAGGED_SHARE, COMPARE_GAP: COMPARE_GAP };
+})();
+if (typeof module !== 'undefined') { module.exports = FNCore; }
+
+/**
+ * School coverage check (field direction 5): pure logic, no I/O.
+ * Runs in Apps Script (copy as CovCore.gs), the browser and Node tests.
+ *
+ * Input rows are scanned survey responses for ONE school, already mapped to:
+ *   { session_key, session_date, group: 'parents'|'teachers'|'staff'|'students'|'other',
+ *     gender: 'male'|'female'|'other'|'', grade: '<grade code or empty>', score: <0-100 overall protection score or null> }
+ * No identifying data: one row per scanned form, as Bodh already stores it.
+ */
+var COV_CONFIG = {
+  targets: { parents: 30, fathers: 5, teachers: 10, grades: 3 }, // soft targets, decided 2 Oct
+  cutoffs: [40, 65, 85],          // band lines: HIGH <40, MODERATE 40-<65, LOW 65-<85, PROTECTED >=85
+  cutZone: 7,                     // a score within 7 points of a band line triggers a second session
+  maxSessions: 2,
+  secondSessionDays: 14,          // Prajakta schedules within 2 weeks of the first session
+  minDisplay: 5,                  // never show a score from fewer than 5 forms
+  scoreGroups: ['parents', 'teachers', 'staff'], // whose forms make up the school's decision score
+  teacherGroups: ['teachers', 'staff']
+};
+
+var CovCore = (function () {
+  function band(score, cut) {
+    if (score === null || score === undefined || isNaN(score)) return null;
+    if (score < cut[0]) return 'HIGH';
+    if (score < cut[1]) return 'MODERATE';
+    if (score < cut[2]) return 'LOW';
+    return 'PROTECTED';
+  }
+  function mean(a) { return a.reduce(function (s, x) { return s + x; }, 0) / a.length; }
+  function sd(a) {
+    if (a.length < 2) return null;
+    var m = mean(a);
+    return Math.sqrt(a.reduce(function (s, x) { return s + (x - m) * (x - m); }, 0) / (a.length - 1));
+  }
+  function round1(x) { return x === null ? null : Math.round(x * 10) / 10; }
+  function addDays(iso, n) {
+    var d = new Date(iso + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n);
+    return d.toISOString().slice(0, 10);
+  }
+
+  /**
+   * profile (optional): { teachers_available: <number> } from the school profile tab.
+   * Returns the coverage record for one school.
+   */
+  function assess(instituteCode, rows, profile, cfg) {
+    cfg = cfg || COV_CONFIG;
+    profile = profile || {};
+    var t = cfg.targets;
+    var parents = rows.filter(function (r) { return r.group === 'parents'; });
+    var teachers = rows.filter(function (r) { return cfg.teacherGroups.indexOf(r.group) >= 0; });
+    var fathers = parents.filter(function (r) { return r.gender === 'male'; });
+    var grades = {};
+    parents.forEach(function (r) { if (r.grade) grades[r.grade] = true; });
+    var sessions = {};
+    rows.forEach(function (r) { sessions[r.session_key] = r.session_date; });
+    var sessionKeys = Object.keys(sessions);
+    var dates = sessionKeys.map(function (k) { return sessions[k]; }).sort();
+
+    var teacherTarget = typeof profile.teachers_available === 'number' && profile.teachers_available < t.teachers
+      ? profile.teachers_available : t.teachers;
+
+    var scores = rows.filter(function (r) { return cfg.scoreGroups.indexOf(r.group) >= 0 && typeof r.score === 'number' && !isNaN(r.score); })
+      .map(function (r) { return r.score; });
+    var n = scores.length;
+    var m = n ? mean(scores) : null;
+    var s = sd(scores);
+    var half = (s !== null && n > 1) ? 1.96 * s / Math.sqrt(n) : null;
+    var nearest = null;
+    if (m !== null) cfg.cutoffs.forEach(function (c) { if (nearest === null || Math.abs(m - c) < Math.abs(m - nearest)) nearest = c; });
+    var nearCut = m !== null && n >= cfg.minDisplay && Math.abs(m - nearest) <= cfg.cutZone;
+
+    var shortfalls = [];
+    if (parents.length < t.parents) shortfalls.push({ item: 'parents', have: parents.length, target: t.parents });
+    if (fathers.length < t.fathers) shortfalls.push({ item: 'fathers', have: fathers.length, target: t.fathers });
+    if (teachers.length < teacherTarget) shortfalls.push({ item: 'teachers', have: teachers.length, target: teacherTarget });
+    if (Object.keys(grades).length < t.grades) shortfalls.push({ item: 'grades', have: Object.keys(grades).length, target: t.grades });
+
+    var reasons = shortfalls.map(function (x) { return x.item + '_short'; });
+    if (nearCut) reasons.push('near_band_line_' + nearest);
+
+    var status;
+    if (!rows.length) status = 'pending';
+    else if (!reasons.length) status = 'ok';
+    else if (sessionKeys.length < cfg.maxSessions) status = 'second_session_needed';
+    else status = 'low_confidence';
+
+    var showScore = n >= cfg.minDisplay;
+    return {
+      institute_code: String(instituteCode),
+      sessions_held: sessionKeys.length,
+      first_session: dates[0] || null,
+      second_session_due: status === 'second_session_needed' && dates[0] ? addDays(dates[0], cfg.secondSessionDays) : null,
+      counts: { parents: parents.length, fathers: fathers.length, teachers: teachers.length, grades: Object.keys(grades).length, scored_forms: n },
+      targets: { parents: t.parents, fathers: t.fathers, teachers: teacherTarget, grades: t.grades },
+      shortfalls: shortfalls,
+      score: showScore ? round1(m) : null,
+      score_range: showScore && half !== null ? [round1(m - half), round1(m + half)] : null,
+      band: showScore ? band(m, cfg.cutoffs) : null,
+      near_band_line: showScore && nearCut ? nearest : null,
+      status: status,
+      reasons: reasons
+    };
+  }
+
+  /** Map raw scanned rows to the shape assess() needs, using the column map and value maps. */
+  function mapRow(raw, map) {
+    function pick(k) { var v = raw[map.columns[k]]; return v === undefined || v === null ? '' : String(v).trim(); }
+    var g = pick('group'), gender = pick('gender').toLowerCase();
+    var score = pick('score');
+    return {
+      session_key: [pick('institute_code'), pick('session_date'), pick('template_id')].join('|'),
+      session_date: pick('session_date'),
+      group: map.groupValues[g] || map.groupValues[g.toLowerCase()] || 'other',
+      gender: map.maleValues.indexOf(gender) >= 0 ? 'male' : map.femaleValues.indexOf(gender) >= 0 ? 'female' : (gender ? 'other' : ''),
+      grade: pick('grade'),
+      score: score === '' ? null : Number(score)
+    };
+  }
+
+  /** Order for Prajakta's list: needs action first, then low confidence, then pending, then ok. */
+  function sortForAction(list) {
+    var rank = { second_session_needed: 0, low_confidence: 1, pending: 2, ok: 3 };
+    return list.slice().sort(function (a, b) {
+      return (rank[a.status] - rank[b.status]) || String(a.second_session_due || '9').localeCompare(String(b.second_session_due || '9')) ||
+        a.institute_code.localeCompare(b.institute_code);
+    });
+  }
+
+  return { assess: assess, mapRow: mapRow, band: band, sortForAction: sortForAction };
+})();
+if (typeof module !== 'undefined') { module.exports = { CovCore: CovCore, COV_CONFIG: COV_CONFIG }; }
+
+/**
+ * Facilitator Session Note: PWA screen (plain JS, no framework).
+ * Needs fn_schema.js and fn_core.js loaded first.
+ *
+ * Usage:
+ *   FacilitatorNote.mount(document.getElementById('app'), {
+ *     lang: 'en' | 'hi' | 'mr',
+ *     session: { institute_code, session_date: 'YYYY-MM-DD', template_id },   // from the current Bodh session
+ *     send: function (action, body) { ... },   // the app's existing queued API call; must queue offline
+ *     fetchSiteMemory: function (instituteCode) { return Promise<{notes:[{date,text}]}> } // optional
+ *     onDone: function () { ... }              // optional
+ *   });
+ */
+var FacilitatorNote = (function () {
+  function uuid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+      var r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+  }
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    Object.keys(attrs || {}).forEach(function (k) {
+      if (k === 'text') e.textContent = attrs[k]; else if (k === 'cls') e.className = attrs[k]; else e.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (k) { if (k) e.appendChild(k); });
+    return e;
+  }
+  var DRAFT_KEY = 'fn_draft_';
+
+  function mount(root, opts) {
+    var S = FN_SCHEMA, L = opts.lang || 'en';
+    var draftKey = DRAFT_KEY + [opts.session.institute_code, opts.session.session_date, opts.session.template_id].join('|');
+    var note = {};
+    try { note = JSON.parse(localStorage.getItem(draftKey) || '{}'); } catch (e) { note = {}; }
+    var noteId = note.__id || uuid(); note.__id = noteId;
+
+    function save() { try { localStorage.setItem(draftKey, JSON.stringify(note)); } catch (e) {} }
+    function val(f) { return note[f.id]; }
+
+    root.innerHTML = '';
+    var form = el('form', { cls: 'fn-form', novalidate: 'novalidate' });
+    form.appendChild(el('h2', { text: S.ui.title[L] }));
+    form.appendChild(el('p', { cls: 'fn-warn', text: S.ui.noNames[L] }));
+
+    if (opts.fetchSiteMemory) {
+      var mem = el('div', { cls: 'fn-memory' });
+      form.appendChild(mem);
+      opts.fetchSiteMemory(opts.session.institute_code).then(function (r) {
+        if (!r || !r.notes || !r.notes.length) return;
+        mem.appendChild(el('h3', { text: S.ui.siteMemory[L] }));
+        r.notes.forEach(function (n) { mem.appendChild(el('p', { text: n.date + ': ' + n.text })); });
+      }).catch(function () {});
+    }
+
+    var blocks = {};
+    S.sections.forEach(function (sec) {
+      var fs = el('fieldset', { cls: 'fn-section' }, [el('legend', { text: sec.id + '. ' + sec[L] })]);
+      S.fields.filter(function (f) { return f.sec === sec.id; }).forEach(function (f) {
+        var b = el('div', { cls: 'fn-q', 'data-field': f.id }, [el('label', { cls: 'fn-label', text: f.q + '  ' + f[L] + (f.required ? ' *' : '') })]);
+        if (f.help) b.appendChild(el('p', { cls: 'fn-help', text: f.help[L] }));
+        b.appendChild(input(f));
+        b.appendChild(el('p', { cls: 'fn-err' }));
+        blocks[f.id] = b; fs.appendChild(b);
+      });
+      form.appendChild(fs);
+    });
+    var status = el('p', { cls: 'fn-status', role: 'status' });
+    form.appendChild(el('button', { type: 'submit', cls: 'fn-submit', text: S.ui.submit[L] }));
+    form.appendChild(status);
+    root.appendChild(form);
+    refreshVisibility();
+
+    function input(f) {
+      var name = 'fn_' + f.id, wrap;
+      if (f.type === 'single' || f.type === 'multi') {
+        wrap = el('div', { cls: 'fn-options' });
+        f.options.forEach(function (op) {
+          var id = name + '_' + op.v;
+          var i = el('input', { type: f.type === 'single' ? 'radio' : 'checkbox', name: name, id: id, value: op.v });
+          if (f.type === 'single' ? val(f) === op.v : (val(f) || []).indexOf(op.v) >= 0) i.checked = true;
+          i.addEventListener('change', function () {
+            if (f.type === 'single') note[f.id] = op.v;
+            else {
+              var cur = (note[f.id] || []).filter(function (x) { return x !== op.v; });
+              if (i.checked) {
+                if (op.v === f.exclusive) cur = [];
+                else cur = cur.filter(function (x) { return x !== f.exclusive; });
+                cur.push(op.v);
+              }
+              note[f.id] = cur;
+              Array.prototype.forEach.call(wrap.querySelectorAll('input'), function (x) { x.checked = cur.indexOf(x.value) >= 0; });
+            }
+            save(); refreshVisibility();
+          });
+          wrap.appendChild(el('label', { cls: 'fn-opt', 'for': id }, [i, el('span', { text: op[L] })]));
+        });
+        return wrap;
+      }
+      if (f.type === 'scale') {
+        wrap = el('div', { cls: 'fn-scale' });
+        wrap.appendChild(el('span', { cls: 'fn-anchor', text: f.anchors[L][0] }));
+        for (var n = f.scale.min; n <= f.scale.max; n++) (function (n) {
+          var id = name + '_' + n, i = el('input', { type: 'radio', name: name, id: id, value: String(n) });
+          if (val(f) === n) i.checked = true;
+          i.addEventListener('change', function () { note[f.id] = n; save(); });
+          wrap.appendChild(el('label', { cls: 'fn-opt', 'for': id }, [i, el('span', { text: String(n) })]));
+        })(n);
+        wrap.appendChild(el('span', { cls: 'fn-anchor', text: f.anchors[L][1] }));
+        return wrap;
+      }
+      var attrs = { name: name, id: name };
+      if (f.type === 'int') { attrs.type = 'number'; attrs.inputmode = 'numeric'; attrs.min = f.min; attrs.max = f.max; }
+      if (f.type === 'time') attrs.type = 'time';
+      if (f.type === 'itemlist') { attrs.type = 'text'; attrs.inputmode = 'numeric'; attrs.placeholder = '3, 7, 12'; }
+      var x = el(f.type === 'text' ? 'textarea' : 'input', Object.assign(attrs, f.type === 'text' ? { maxlength: S.textMax, rows: 3 } : {}));
+      var v = val(f);
+      if (v !== undefined) x.value = Array.isArray(v) ? v.join(', ') : v;
+      x.addEventListener('input', function () {
+        var s = x.value.trim();
+        if (f.type === 'int') note[f.id] = s === '' ? undefined : Number(s);
+        else if (f.type === 'itemlist') note[f.id] = s === '' ? undefined : s.split(/[,\s]+/).filter(Boolean).map(Number);
+        else note[f.id] = s === '' ? undefined : (f.type === 'text' ? x.value : s);
+        save();
+      });
+      return x;
+    }
+
+    function refreshVisibility() {
+      S.fields.forEach(function (f) {
+        if (!f.showIf) return;
+        var on = note[f.showIf.field] === f.showIf.equals;
+        blocks[f.id].style.display = on ? '' : 'none';
+        if (!on && note[f.id] !== undefined) { delete note[f.id]; save(); }
+      });
+    }
+
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var clean = {};
+      S.fields.forEach(function (f) { if (note[f.id] !== undefined) clean[f.id] = note[f.id]; });
+      Object.keys(blocks).forEach(function (k) { blocks[k].classList.remove('fn-bad'); blocks[k].querySelector('.fn-err').textContent = ''; });
+      var res = FNCore.validate(clean, S);
+      if (!res.ok) {
+        res.errors.forEach(function (e) {
+          var b = blocks[e.field]; if (!b) return;
+          b.classList.add('fn-bad'); b.querySelector('.fn-err').textContent = e.code.replace(/_/g, ' ');
+        });
+        status.textContent = S.ui.fixErrors[L];
+        var first = form.querySelector('.fn-bad'); if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      opts.send('fn.save', { note_id: noteId, session: opts.session, note: clean });
+      try { localStorage.removeItem(draftKey); } catch (e) {}
+      status.textContent = S.ui.saved[L];
+      form.querySelector('.fn-submit').disabled = true;
+      if (opts.onDone) opts.onDone();
+    });
+  }
+  return { mount: mount };
+})();
+
+/**
+ * School coverage list: Prajakta's screen (plain JS). Needs cov_core.js for COV_CONFIG labels only.
+ *
+ * CoverageList.mount(container, { lang: 'en'|'hi'|'mr', load: function () { return Promise<{schools:[...]}> } })
+ * `load` calls the backend action cov.list. Offline, show the last list the app cached.
+ */
+var CoverageList = (function () {
+  var T = {
+    title: { en: 'School coverage', hi: 'स्कूल कवरेज', mr: 'शाळा कव्हरेज' },
+    status: {
+      second_session_needed: { en: 'Second session needed', hi: 'दूसरा सत्र ज़रूरी', mr: 'दुसरे सत्र आवश्यक' },
+      low_confidence: { en: 'Low confidence (2 sessions held)', hi: 'कम भरोसा (2 सत्र हो चुके)', mr: 'कमी विश्वास (2 सत्र झाले)' },
+      pending: { en: 'No forms scanned yet', hi: 'अभी कोई फ़ॉर्म स्कैन नहीं', mr: 'अजून फॉर्म स्कॅन नाहीत' },
+      ok: { en: 'Covered', hi: 'पूरा', mr: 'पूर्ण' }
+    },
+    items: {
+      parents: { en: 'Parents', hi: 'अभिभावक', mr: 'पालक' }, fathers: { en: 'Fathers', hi: 'पिता', mr: 'वडील' },
+      teachers: { en: 'Teachers and staff', hi: 'शिक्षक और स्टाफ', mr: 'शिक्षक व कर्मचारी' }, grades: { en: 'Grades', hi: 'कक्षाएँ', mr: 'इयत्ता' }
+    },
+    due: { en: 'Due by', hi: 'अंतिम तारीख', mr: 'शेवटची तारीख' },
+    near: { en: 'Score near the band line', hi: 'स्कोर बैंड रेखा के पास', mr: 'गुण बँड रेषेजवळ' },
+    hidden: { en: 'Score hidden: fewer than 5 forms', hi: 'स्कोर छिपा: 5 से कम फ़ॉर्म', mr: 'गुण लपवले: 5 पेक्षा कमी फॉर्म' }
+  };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+
+  function card(c, L) {
+    var box = el('div', 'cov-card cov-' + c.status);
+    var head = el('div', 'cov-head');
+    head.appendChild(el('strong', null, c.institute_code));
+    head.appendChild(el('span', 'cov-status', T.status[c.status][L]));
+    box.appendChild(head);
+    if (c.second_session_due) box.appendChild(el('p', 'cov-due', T.due[L] + ' ' + c.second_session_due));
+    var grid = el('div', 'cov-grid');
+    ['parents', 'fathers', 'teachers', 'grades'].forEach(function (k) {
+      var have = Number(c[k]), target = Number(c[k + '_target']);
+      var cell = el('div', 'cov-item ' + (have >= target ? 'cov-met' : 'cov-short'));
+      cell.appendChild(el('span', 'cov-num', have + ' / ' + target));
+      cell.appendChild(el('span', 'cov-lbl', T.items[k][L]));
+      grid.appendChild(cell);
+    });
+    box.appendChild(grid);
+    if (c.score === '' || c.score === null) {
+      if (c.status !== 'pending') box.appendChild(el('p', 'cov-score', T.hidden[L]));
+    } else {
+      var txt = c.band + ' · ' + c.score + (c.score_low !== '' && c.score_low !== undefined ? ' (' + c.score_low + '–' + c.score_high + ')' : '');
+      box.appendChild(el('p', 'cov-score', txt));
+      if (c.near_band_line) box.appendChild(el('p', 'cov-near', T.near[L] + ' ' + c.near_band_line));
+    }
+    return box;
+  }
+
+  function mount(root, opts) {
+    var L = opts.lang || 'en';
+    root.innerHTML = '';
+    root.appendChild(el('h2', 'cov-title', T.title[L]));
+    var list = el('div', 'cov-list');
+    root.appendChild(list);
+    return opts.load().then(function (r) {
+      (r.schools || []).forEach(function (c) { list.appendChild(card(c, L)); });
+    });
+  }
+  return { mount: mount };
+})();
+</script>
+<script>(function(){
+"use strict";
+const DEFAULT_URL="https://script.google.com/macros/s/AKfycby1jba1ngVDe2X2hZnre7F-G6MGjYVBYSf21GYIlAQp1NtALONbqfCx2KslGX6NgTXT/exec";
+const VERSION="Bodh-Yantra v1.1 · spec v1.6 · fn-v1";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function ls(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||"null");if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+
+/* ---------- words (English / Hindi) ---------- */
+const W={
+en:{today:"Today",schools:"Schools",progress:"Progress",money:"Money",more:"More",log:"Log",logSession:"Log a session",book:"Book",bookSession:"Book a session",
+ next:"What's next",todayS:"Today",tomorrow:"Tomorrow",thisWeek:"Later this week",overdue:"Overdue",nothingToday:"Nothing booked today",
+ toBook:"Needs booking",allDone:"All steps done",hi:"Hi",week:"Week",day:"day",notStarted:"Not onboarded yet",
+ school:"School",code:"Institution Code",codeHint:"Type the code painted at the school gate",section:"Section",session:"Session",batch:"Batch / class",
+ date:"Date",time:"Time",girls:"Girls",boys:"Boys",planned:"Planned",headcount:"Headcount",consentOut:"Forms given",consentIn:"Forms returned",
+ facilitators:"Facilitators",status:"Status",done:"Done",partly:"Partly done",postponed:"Postponed",cancelled:"Cancelled",reason:"Reason",notes:"Notes",
+ save:"Save",cancel:"Cancel",close:"Close",location:"Location",locating:"Finding your location…",locOk:"Location captured",locOff:"Location is off — the log will be flagged",
+ accuracy:"accuracy",far:"away from the school",flagged:"Flagged",review:"Mark reviewed",saved:"Saved",queued:"Saved on this phone · will sync",
+ upToDate:"Up to date",offline:"Offline",toSync:"to sync",saving:"Saving…",
+ headmaster:"Headmaster",call:"Call",map:"Map",address:"Address",medium:"Medium",timing:"School time",enrolment:"Children",assumed:"assumed",
+ steps:"Steps",bookings:"Bookings",recent:"Recent logs",noLogs:"No sessions logged yet",setHere:"Set school location from here",assign:"Assign facilitators",
+ endlineFrom:"Endline from",daysLeft:"days to 8 Jan",baselineDone:"Baseline done",baselineOn:"Baseline booked",noBaseline:"Baseline not booked",
+ closed:"Schools are closed",beforeEnd:"Earliest endline",afterLast:"The last endline date is Fri 8 Jan",
+ kpiSchools:"Schools with baseline",kpiReached:"Children reached",kpiConsent:"Consent forms returned",kpiWeek:"Sessions this week",
+ grid:"All schools",flaggedLogs:"Flagged logs",load:"Facilitator load",unassigned:"Schools without a facilitator",upcoming:"upcoming",
+ expenses:"My expenses",newExpense:"New expense",amount:"Amount",category:"Category",activity:"Activity",pilotWide:"Whole pilot",
+ receipt:"Receipt photo",receiptNeed:"Needed for anything over ₹500",attach:"Attach",attached:"Attached",pending:"Waiting for approval",
+ approved:"Approved",rejected:"Not approved",added:"Added to accounts",approvals:"Approvals",approve:"Approve",reject:"Reject",
+ referrals:"Referrals",newReferral:"New referral",refType:"Referred to",age:"Age",gender:"Gender",girl:"Girl",boy:"Boy",other:"Other",notSaid:"Not said",
+ pocso:"Is this a POCSO matter?",reported:"Mandatory report made?",reportDate:"Report date",caseId:"Case ID",refNote:"No names, school or class are kept — only this Case ID.",
+ pocsoPending:"Report pending",complete:"Complete",confirmReport:"Confirm report",
+ language:"Language",passcode:"Change passcode",signOut:"Sign out",syncMaster:"Refresh from the master sheet",openMaster:"Open PRAJA — master",
+ lastSync:"Master sheet read",yes:"Yes",no:"No",needCode:"Type the Institution Code",wrongCode:"That code doesn't match this school",
+ whoUses:"Who's using this phone?",setupCode:"Type your setup code and choose a passcode (6+ characters).",passPh:"Passcode",newPh:"New passcode",againPh:"Type it again",
+ go:"Continue",pasteLink:"Paste the Bodh-Yantra link (ends in /exec).",cantReach:"Can't reach Bodh-Yantra. Check your connection.",tapName:"Tap your name first.",
+ mismatch:"The two passcodes don't match.",short:"Use at least 6 characters.",intro:"PRAJA field work, one step at a time.",
+ fac:"Facilitator",coord:"Coordinator",admin:"Indwoke",all:"All",mine:"My schools",none:"None yet",pick:"Pick",onHoliday:"School holiday",
+ nextStep:"Next step",dueOn:"planned",daysLate:"days late",earliestEnd:"Earliest endline date",logThis:"Log it",
+ sessionsDone:"sessions",people:"people",nothingHere:"Nothing here yet",openInDrive:"Open",rejectWhy:"Why not approved?",
+ lateBaseline:"Booked after 20 Oct: the endline would fall after 8 Jan.",noteTitle:"Facilitator note",notesToWrite:"Session notes to write",writeNote:"Write note",noteDone:"Note sent",coverage:"School coverage",covSub:"Second sessions, fathers, teachers and grades",covNotConnected:"Not connected to the scanned forms yet. Dev needs to add the scan sheet.",alreadySubmitted:"You already sent a note for this session",noteInvalid:"The note has answers to fix — open it again",cached:"Saved copy",viewOnly:"View only",refreshDone:"Refreshed from the master sheet"},
+hi:{today:"आज",schools:"स्कूल",progress:"प्रगति",money:"पैसा",more:"और",log:"दर्ज करें",logSession:"सत्र दर्ज करें",book:"तय करें",bookSession:"सत्र तय करें",
+ next:"आगे क्या करना है",todayS:"आज",tomorrow:"कल",thisWeek:"इस हफ़्ते आगे",overdue:"देर हो गई",nothingToday:"आज कुछ तय नहीं है",
+ toBook:"तारीख़ तय करनी है",allDone:"सभी चरण पूरे",hi:"नमस्ते",week:"हफ़्ता",day:"दिन",notStarted:"अभी ऑनबोर्ड नहीं हुआ",
+ school:"स्कूल",code:"संस्था कोड",codeHint:"स्कूल के गेट पर लिखा कोड लिखें",section:"सेक्शन",session:"सत्र",batch:"बैच / कक्षा",
+ date:"तारीख़",time:"समय",girls:"लड़कियाँ",boys:"लड़के",planned:"योजना",headcount:"उपस्थिति",consentOut:"फ़ॉर्म दिए",consentIn:"फ़ॉर्म वापस आए",
+ facilitators:"फ़ैसिलिटेटर",status:"स्थिति",done:"पूरा",partly:"आंशिक",postponed:"आगे बढ़ाया",cancelled:"रद्द",reason:"कारण",notes:"टिप्पणी",
+ save:"सेव करें",cancel:"रद्द",close:"बंद करें",location:"लोकेशन",locating:"आपकी लोकेशन ढूँढ रहे हैं…",locOk:"लोकेशन मिल गई",locOff:"लोकेशन बंद है — यह एंट्री फ़्लैग होगी",
+ accuracy:"सटीकता",far:"स्कूल से दूर",flagged:"फ़्लैग",review:"देख लिया",saved:"सेव हो गया",queued:"फ़ोन पर सेव · नेटवर्क आने पर भेजा जाएगा",
+ upToDate:"अपडेट है",offline:"ऑफ़लाइन",toSync:"भेजना बाकी",saving:"सेव हो रहा है…",
+ headmaster:"प्रधानाध्यापक",call:"कॉल",map:"नक्शा",address:"पता",medium:"माध्यम",timing:"स्कूल का समय",enrolment:"बच्चे",assumed:"अनुमानित",
+ steps:"चरण",bookings:"तय सत्र",recent:"हाल के सत्र",noLogs:"अभी कोई सत्र दर्ज नहीं",setHere:"यहीं से स्कूल की लोकेशन सेट करें",assign:"फ़ैसिलिटेटर चुनें",
+ endlineFrom:"एंडलाइन इस तारीख़ से",daysLeft:"दिन 8 जनवरी तक",baselineDone:"बेसलाइन पूरी",baselineOn:"बेसलाइन तय",noBaseline:"बेसलाइन तय नहीं",
+ closed:"स्कूल बंद हैं",beforeEnd:"सबसे पहली एंडलाइन",afterLast:"एंडलाइन की आख़िरी तारीख़ शुक्र 8 जनवरी है",
+ kpiSchools:"बेसलाइन वाले स्कूल",kpiReached:"बच्चों तक पहुँचे",kpiConsent:"सहमति फ़ॉर्म वापस",kpiWeek:"इस हफ़्ते के सत्र",
+ grid:"सभी स्कूल",flaggedLogs:"फ़्लैग एंट्री",load:"फ़ैसिलिटेटर का काम",unassigned:"बिना फ़ैसिलिटेटर वाले स्कूल",upcoming:"आने वाले",
+ expenses:"मेरे खर्च",newExpense:"नया खर्च",amount:"रकम",category:"श्रेणी",activity:"गतिविधि",pilotWide:"पूरा पायलट",
+ receipt:"रसीद की फ़ोटो",receiptNeed:"₹500 से ज़्यादा के लिए ज़रूरी",attach:"जोड़ें",attached:"जुड़ गई",pending:"मंज़ूरी बाकी",
+ approved:"मंज़ूर",rejected:"मंज़ूर नहीं",added:"हिसाब में जुड़ गया",approvals:"मंज़ूरियाँ",approve:"मंज़ूर करें",reject:"अस्वीकार",
+ referrals:"रेफ़रल",newReferral:"नया रेफ़रल",refType:"किसके पास भेजा",age:"उम्र",gender:"लिंग",girl:"लड़की",boy:"लड़का",other:"अन्य",notSaid:"नहीं बताया",
+ pocso:"क्या यह POCSO मामला है?",reported:"अनिवार्य रिपोर्ट हो गई?",reportDate:"रिपोर्ट की तारीख़",caseId:"केस ID",refNote:"कोई नाम, स्कूल या कक्षा नहीं रखी जाती — सिर्फ़ यह केस ID।",
+ pocsoPending:"रिपोर्ट बाकी",complete:"पूरा",confirmReport:"रिपोर्ट की पुष्टि करें",
+ language:"भाषा",passcode:"पासकोड बदलें",signOut:"साइन आउट",syncMaster:"मास्टर शीट से फिर पढ़ें",openMaster:"PRAJA — master खोलें",
+ lastSync:"मास्टर शीट पढ़ी गई",yes:"हाँ",no:"नहीं",needCode:"संस्था कोड लिखें",wrongCode:"यह कोड इस स्कूल से मेल नहीं खाता",
+ whoUses:"यह फ़ोन कौन इस्तेमाल कर रहा है?",setupCode:"अपना सेटअप कोड लिखें और पासकोड चुनें (कम से कम 6 अक्षर)।",passPh:"पासकोड",newPh:"नया पासकोड",againPh:"फिर से लिखें",
+ go:"आगे बढ़ें",pasteLink:"Bodh-Yantra लिंक पेस्ट करें (/exec पर ख़त्म)।",cantReach:"Bodh-Yantra से जुड़ नहीं पा रहे। नेटवर्क देखें।",tapName:"पहले अपना नाम चुनें।",
+ mismatch:"दोनों पासकोड अलग हैं।",short:"कम से कम 6 अक्षर रखें।",intro:"PRAJA का फ़ील्ड काम, एक-एक कदम।",
+ fac:"फ़ैसिलिटेटर",coord:"समन्वयक",admin:"Indwoke",all:"सभी",mine:"मेरे स्कूल",none:"अभी कोई नहीं",pick:"चुनें",onHoliday:"स्कूल की छुट्टी",
+ nextStep:"अगला चरण",dueOn:"तय",daysLate:"दिन की देरी",earliestEnd:"सबसे पहली एंडलाइन तारीख़",logThis:"दर्ज करें",
+ sessionsDone:"सत्र",people:"लोग",nothingHere:"अभी यहाँ कुछ नहीं",openInDrive:"खोलें",rejectWhy:"मंज़ूर क्यों नहीं?",
+ lateBaseline:"20 अक्टूबर के बाद तय: एंडलाइन 8 जनवरी के बाद पड़ेगी।",noteTitle:"फैसिलिटेटर नोट",notesToWrite:"लिखने बाकी सत्र नोट",writeNote:"नोट लिखें",noteDone:"नोट भेजा",coverage:"स्कूल कवरेज",covSub:"दूसरा सत्र, पिता, शिक्षक और कक्षाएँ",covNotConnected:"स्कैन किए फ़ॉर्म से अभी जुड़ा नहीं है। Dev को स्कैन शीट जोड़नी है।",alreadySubmitted:"इस सत्र का नोट आप पहले ही भेज चुके हैं",noteInvalid:"नोट में कुछ उत्तर ठीक करने हैं — फिर से खोलें",cached:"सहेजी गई कॉपी",viewOnly:"सिर्फ़ देखने के लिए",refreshDone:"मास्टर शीट से अपडेट हुआ"}};
+const TYPES_FALLBACK=[["onboard","Onboarding","ऑनबोर्डिंग"],["consent","Consent forms","सहमति फ़ॉर्म"],["baseline","Baseline for Parents and Teachers","अभिभावकों और शिक्षकों के लिए बेसलाइन"],["parent","Parent module","अभिभावक मॉड्यूल"],["staff","Staff module","स्टाफ़ मॉड्यूल"],["children","Children's Module","बच्चों का मॉड्यूल"],["review","Review / recall tool","समीक्षा / रिकॉल टूल"]].map(([id,en,hi])=>({id,en,hi}));
+const SHORT={en:{onboard:"Onboard",consent:"Consent",baseline:"Baseline",parent:"Parents",staff:"Staff",children:"Children",review:"Endline"},hi:{onboard:"ऑनबोर्ड",consent:"सहमति",baseline:"बेसलाइन",parent:"अभिभावक",staff:"स्टाफ़",children:"बच्चे",review:"एंडलाइन"}};
+const CATS=[["Travel","यात्रा"],["Printing & Stationery","छपाई और स्टेशनरी"],["Food","खाना"],["Venue & Events","जगह और कार्यक्रम"],["Other","अन्य"]];
+const PEOPLE=[["prema","Prema","coord"],["prajs","Prajakta Sarwottam","coord"],["samiksha","Samiksha","fac"],["neelam","Neelam","fac"],["dev","Dev","admin"],["praj","Prajakta (Indwoke)","admin"]];
+
+/* ---------- state ---------- */
+let cfg=ls("by.cfg")||{};
+(function(){const m=location.hash.match(/api=([^&]+)/);if(m){cfg.url=decodeURIComponent(m[1]);ls("by.cfg",cfg);history.replaceState(null,"",location.pathname+location.search)}})();
+if(DEFAULT_URL&&(!cfg.url||cfg.base!==DEFAULT_URL)){cfg={url:DEFAULT_URL,base:DEFAULT_URL,who:cfg.who,lang:cfg.lang};ls("by.cfg",cfg);try{localStorage.removeItem("by.data");localStorage.removeItem("by.queue")}catch(e){}}
+let lang=cfg.lang||((navigator.language||"").slice(0,2)==="hi"?"hi":"en");
+const t=k=>(W[lang]&&W[lang][k])||W.en[k]||k;
+let data=ls("by.data")||null, queue=ls("by.queue")||[];
+let view=ls("by.view")||"today", online=false, busy=false, lastSync=ls("by.last")||null, openSchool=null;
+function persist(){ls("by.data",data);ls("by.queue",queue)}
+const me=()=>data&&data.me||{id:cfg.who,role:(PEOPLE.find(p=>p[0]===cfg.who)||[])[2]||"fac"};
+const isCoord=()=>me().role!=="fac";
+const types=()=>(data&&data.types)||TYPES_FALLBACK;
+const typeName=id=>{const x=types().find(y=>y.id===id);return x?x[lang]||x.en:id};
+const personName=id=>{const r=(data&&data.roster||[]).find(x=>x.id===id);return r?r.name:(PEOPLE.find(p=>p[0]===id)||[0,id])[1]};
+const schoolBy=no=>(data&&data.schools||[]).find(s=>s.no===+no);
+const rules=()=>(data&&data.rules)||{holidays:[["2026-11-05","2026-11-23","Diwali break"],["2026-12-25","2026-12-25","Christmas Day"]],lastBaseline:"2026-10-20",lastEndline:"2027-01-08",pilotEnd:"2027-01-15",endlineDays:80,farMetres:100,autoLimit:500};
+
+/* ---------- dates ---------- */
+const pad=n=>String(n).padStart(2,"0");
+const todayIso=()=>{const d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())};
+const nowHM=()=>{const d=new Date();return pad(d.getHours())+":"+pad(d.getMinutes())};
+const dPlus=(iso,n)=>{const d=new Date(iso+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+n);return d.toISOString().slice(0,10)};
+const dDiff=(a,b)=>Math.round((new Date(b+"T12:00:00Z")-new Date(a+"T12:00:00Z"))/864e5);
+const MON={en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],hi:["जन","फ़र","मार्च","अप्रै","मई","जून","जुला","अग","सित","अक्टू","नव","दिस"]};
+const WD={en:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],hi:["रवि","सोम","मंगल","बुध","गुरु","शुक्र","शनि"]};
+const fmtD=iso=>{if(!iso)return"";const d=new Date(iso+"T12:00:00Z");return WD[lang][d.getUTCDay()]+" "+d.getUTCDate()+" "+MON[lang][d.getUTCMonth()]};
+const holidayOf=iso=>{const h=rules().holidays.find(h=>iso>=h[0]&&iso<=h[1]);return h?h[2]:""};
+const inr=n=>"₹"+(Math.round(+n*100)/100).toLocaleString("en-IN");
+
+/* ---------- network + offline queue ---------- */
+async function api(op,extra){
+  if(!cfg.url) throw new Error("No link");
+  const ctl=new AbortController(), tm=setTimeout(()=>ctl.abort(),45000);
+  try{
+    const r=await fetch(cfg.url,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(Object.assign({op,who:cfg.who,pass:cfg.pass},extra||{})),signal:ctl.signal,redirect:"follow"});
+    const j=await r.json();
+    if(!j.ok&&/passcode/i.test(j.error||"")&&op!=="status"&&op!=="claim") signOut(true);
+    return j;
+  } finally{clearTimeout(tm)}
+}
+function applyLocal(op){
+  if(!data) return;
+  if(op.op==="f_log"){const i=data.sessions.findIndex(x=>x.id===op.item.id);const s=schoolBy(op.item.school)||{};const x=Object.assign({school:s.no,loggedBy:cfg.who,loggedAt:new Date().toISOString(),_local:true},op.item);if(i>=0)data.sessions[i]=x;else data.sessions.unshift(x);
+    if(op.item.scheduleId){const p=data.plan.find(p=>p.id===op.item.scheduleId);if(p&&op.item.status!=="postponed")p.status="done"}}
+  if(op.op==="f_schedule"){const i=data.plan.findIndex(x=>x.id===op.item.id);const x=Object.assign({status:"planned",source:"app",_local:true},op.item);if(i>=0)data.plan[i]=x;else data.plan.push(x);data.plan.sort((a,b)=>(a.date+(a.time||"")).localeCompare(b.date+(b.time||"")))}
+  if(op.op==="f_unschedule"){const p=data.plan.find(x=>x.id===op.id);if(p)p.status="cancelled"}
+  if(op.op==="f_expense"){data.expenses=data.expenses||[];if(!data.expenses.some(x=>x._tmp===op.tmp))data.expenses.unshift(Object.assign({_tmp:op.tmp,status:"sending"},op.item,{school:op.item.school==="all"?"Pilot-wide":"School "+op.item.school}))}
+  if(op.op==="f_review"){const f=(data.progress||{}).flagged||[];const i=f.findIndex(x=>x.id===op.id);if(i>=0)f.splice(i,1)}
+  if(op.op==="f_assign"){const s=schoolBy(op.school);if(s)s.facilitators=op.facilitators}
+  if(op.op==="f_decide"){data.approvals=(data.approvals||[]).filter(x=>x.id!==op.id)}
+  if(op.op==="fn.save"){data.myNotes=data.myNotes||[];const k=fnKey(op.session);if(!data.myNotes.includes(k))data.myNotes.push(k)}
+}
+function enqueue(op){applyLocal(op);queue.push(op);persist();render();flush()}
+async function flush(){
+  if(busy||!queue.length||!cfg.pass) return;
+  busy=true; setSync();
+  try{
+    while(queue.length){
+      const op=queue[0];
+      if(op.op==="f_expense"&&op.receiptData&&!op.item.receipt){
+        const u=await api("f_receipt",{data:op.receiptData,mime:"image/jpeg",name:"receipt-"+op.item.date+"-"+cfg.who+".jpg"});
+        if(!u.ok){toast(u.error||"Receipt upload failed");break}
+        op.item.receipt=u.url; delete op.receiptData; persist();
+      }
+      const r=await api(op.op,op);
+      if(!r.ok){
+        toast(r.error==="already_submitted"?t("alreadySubmitted"):r.error==="invalid"?t("noteInvalid"):(r.error||"Could not save"));
+        if(!/Too many|Service|timed out|Exception: /i.test(r.error||"")){queue.shift();persist();await load(true,true)}
+        break;
+      }
+      if(op.op==="f_log"&&r.item){const i=data.sessions.findIndex(x=>x.id===r.item.id);if(i>=0)data.sessions[i]=r.item;if(r.item.flag==="far")toast(t("flagged")+" · "+r.item.distance+" m "+t("far"))}
+      if(op.op==="f_schedule"&&r.warning)toast(t("lateBaseline"));
+      if(op.op==="f_expense"&&r.item){const i=data.expenses.findIndex(x=>x._tmp===op.tmp);if(i>=0)data.expenses[i]=r.item}
+      if(op.op==="f_referral"&&r.caseId){data.lastCase={caseId:r.caseId,status:r.status,tmp:op.tmp};showCase(r.caseId,r.status)}
+      queue.shift(); persist(); online=true;
+    }
+  }catch(e){online=false}
+  busy=false; setSync(); render();
+}
+async function load(quiet,noFlush){
+  if(!cfg.pass) return;
+  const b=$("#refresh"); b.classList.add("spin");
+  try{
+    if(!noFlush) await flush();
+    const r=await api("f_boot");
+    if(r.ok){
+      const lc=data&&data.lastCase; data=r; if(lc) data.lastCase=lc;
+      if(r.me&&r.me.lang&&!cfg.langSet){lang=r.me.lang;cfg.lang=lang;ls("by.cfg",cfg)}
+      queue.forEach(applyLocal); online=true; lastSync=Date.now(); ls("by.last",lastSync); persist();
+    } else if(!quiet) toast(r.error||"Could not load");
+  }catch(e){online=false; if(!quiet) toast(t("offline"))}
+  b.classList.remove("spin"); setSync(); render();
+}
+function setSync(){
+  const d=$("#dot"), s=$("#syncText");
+  if(busy){d.className="warn";s.textContent=t("saving");return}
+  if(queue.length){d.className="warn";s.textContent=queue.length+" "+t("toSync");return}
+  if(!online){d.className="warn";s.textContent=t("offline");return}
+  d.className="ok"; s.textContent=t("upToDate");
+}
+
+/* ---------- ui helpers ---------- */
+let toastT;
+function toast(msg){const x=$("#toast");x.textContent=msg;x.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>x.hidden=true,3200)}
+function openSheet(html,cls){const s=$("#sheet");s.className="sheet "+(cls||"");s.innerHTML='<div class="grab"></div>'+html;$("#backdrop").hidden=false;const b=s.querySelector(".body");if(b)b.scrollTop=0;return s}
+function closeSheet(){$("#backdrop").hidden=true;$("#sheet").innerHTML="";stopGeo()}
+$("#backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")closeSheet()});
+const pick=(name,opts,val,multi)=>`<div class="pick${multi?" multi":""}" data-pick="${name}">${opts.map(([k,l])=>`<button type="button" data-v="${esc(k)}" aria-pressed="${multi?(val||[]).includes(k):String(val)===String(k)}">${esc(l)}</button>`).join("")}</div>`;
+function wirePick(root,onChange){root.querySelectorAll(".pick").forEach(p=>p.querySelectorAll("button").forEach(b=>b.onclick=()=>{
+  if(p.classList.contains("multi")) b.setAttribute("aria-pressed",b.getAttribute("aria-pressed")!=="true");
+  else p.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  onChange&&onChange(p.dataset.pick);}))}
+const pickVal=(root,name)=>{const p=root.querySelector(`[data-pick="${name}"]`);if(!p)return"";const on=[...p.querySelectorAll('button[aria-pressed="true"]')].map(b=>b.dataset.v);return p.classList.contains("multi")?on:(on[0]||"")};
+const rid=p=>p+Math.random().toString(36).slice(2,10).toUpperCase();
+const STATE_C={done:"st-ok",partly:"st-part",planned:"st-plan",overdue:"st-late",todo:"st-todo"};
+function stepDots(s){return `<div class="dots">${types().map(ty=>{const st=(s.steps&&s.steps[ty.id]||{}).state||"todo";return `<i class="${STATE_C[st]||"st-todo"}" title="${esc(typeName(ty.id))}"></i>`}).join("")}</div>`}
+function trackerLine(s){const tr=s.tracker||{};if(!tr.week)return t("notStarted")+(s.onboard?" · "+fmtD(s.onboard):"");return t("week")+" "+tr.week+" · "+t("day")+" "+tr.day}
+function flagText(f,dist){const k=String(f||"").split(",")[0];return ({far:(dist||"?")+" m "+t("far"),"no-location":t("locOff"),"no-school-point":lang==="hi"?"स्कूल की लोकेशन सेट नहीं":"School has no map point yet",holiday:t("onHoliday")})[k]||f}
+
+/* ---------- facilitator note (fn-v1) ---------- */
+const fnSession=x=>{const s=schoolBy(x.school)||{};return {institute_code:s.code||"",session_date:String(x.date),template_id:x.type+(x.batch?":"+x.batch:"")}};
+const fnKey=s=>[s.institute_code,s.session_date,s.template_id||""].join("|");
+const noteDone=x=>(data.myNotes||[]).includes(fnKey(fnSession(x)));
+const wasThere=x=>x.loggedBy===cfg.who||String(x.facilitators||"").split(",").includes(cfg.who);
+function notesDue(){const from=dPlus(todayIso(),-7);return (data.sessions||[]).filter(x=>(x.status==="done"||x.status==="partly")&&x.date>=from&&wasThere(x)&&!noteDone(x)&&!x._local)}
+let noteLang=ls("by.fnlang")||null;
+function openNote(x){
+  const L=noteLang||lang, s=schoolBy(x.school)||{name:""};
+  const sh=openSheet(`<header><button id="nC">${t("close")}</button><h3>${t("noteTitle")}</h3><span style="min-width:64px"></span></header><div class="body"><div class="fnlang" style="justify-content:flex-end;margin:-4px 0 8px">${[["en","English"],["hi","हिंदी"],["mr","मराठी"]].map(([k,l])=>`<button type="button" data-fl="${k}" aria-pressed="${L===k}">${l}</button>`).join("")}</div><div class="note">${t("school")} ${x.school} · ${esc(s.name)} · ${esc(typeName(x.type))}${x.batch?" · "+esc(x.batch):""} · ${esc(fmtD(String(x.date)))}</div><div id="fnRoot"></div></div>`,"wide");
+  $("#nC").onclick=()=>{closeSheet();render()};
+  sh.querySelectorAll("[data-fl]").forEach(b=>b.onclick=()=>{noteLang=b.dataset.fl;ls("by.fnlang",noteLang);openNote(x)});
+  FacilitatorNote.mount($("#fnRoot"),{lang:L,session:fnSession(x),
+    send:(action,body)=>enqueue(Object.assign({op:action},body)),
+    fetchSiteMemory:code=>navigator.onLine&&cfg.pass?api("fn.siteMemory",{institute_code:code}).catch(()=>null):Promise.resolve(null),
+    onDone:()=>{setTimeout(()=>{closeSheet();render()},900)}});
+}
+/* ---------- school coverage (Prajakta Sarwottam + admins) ---------- */
+function coverageView(){return `<button class="back" id="covBack">‹ ${t("more")}</button><div id="covBanner"></div><div id="covRoot"></div>`}
+function wireCoverage(){
+  $("#covBack").onclick=()=>{view="more";render()};
+  const names={};(data.schools||[]).forEach(s=>names[String(s.code).toUpperCase()]=t("school")+" "+s.no+" · "+s.name);
+  const decorate=()=>$$("#covRoot .cov-card strong").forEach(el=>{const n=names[el.textContent.toUpperCase()];if(n&&!el.nextSibling?.classList?.contains("cov-name")){const sp=document.createElement("span");sp.className="cov-name";sp.textContent=n;el.after(sp)}});
+  CoverageList.mount($("#covRoot"),{lang:lang==="hi"?"hi":(noteLang==="mr"?"mr":"en"),load:()=>api("cov.list").then(r=>{if(!r.ok)throw new Error(r.error);ls("by.cov",r);return r}).catch(()=>{const c=ls("by.cov");if(c)$("#covBanner").innerHTML=`<div class="banner">${t("cached")} · ${t("offline")}</div>`;return c||{schools:[]}})
+    .then(r=>{if(r.configured===false)$("#covBanner").innerHTML=`<div class="banner">${esc(t("covNotConnected"))}</div>`;return r})}).then(decorate);
+}
+
+/* ---------- navigation ---------- */
+const TAB_IC={
+ today:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg>',
+ schools:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/></svg>',
+ progress:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 20V12M10 20V7M15 20v-5M20 20V4"/></svg>',
+ money:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5h10M7 9h10M7 4.5c4.5 0 6 2.2 6 4.5S11 13.5 7 13.5l8 6"/></svg>',
+ more:'<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>'};
+const isMoney=()=>["dev","praj"].includes(me().id||cfg.who);   // the Ledger (Money) section: Dev and Prajakta only
+function views(){return isCoord()?["today","schools","progress"].concat(isMoney()?["money"]:[],["more"]):["today","schools","more"]}
+function render(){
+  document.documentElement.lang=lang;
+  $("#langBtn").textContent=lang==="hi"?"EN":"हिं";
+  if(!views().includes(view)&&!(view==="coverage"&&data&&data.coverage)) view="today";
+  const tabs=views().map(k=>`<button data-v="${k}" aria-pressed="${view===k&&!openSchool}">${TAB_IC[k]}<span>${esc(t(k))}</span></button>`).join("");
+  $("#tabbar").innerHTML=tabs; $("#snav").innerHTML=tabs;
+  $$("#tabbar button,#snav button").forEach(b=>b.onclick=()=>{if(b.dataset.v==="money"){persist();location.href="money/";return}view=b.dataset.v;openSchool=null;ls("by.view",view);render();scrollTo(0,0)});
+  $("#fabText").textContent=t("log"); $("#fab").hidden=!data;
+  $("#sMe").innerHTML=data?`<small>${esc(t(me().role))}</small><b>${esc(me().name||"")}</b>`:"";
+  setSync();
+  const v=$("#view");
+  if(!data){$("#title").textContent="";v.innerHTML=`<div class="empty"><b>…</b></div>`;return}
+  if(openSchool){$("#title").textContent=t("school")+" "+openSchool;v.innerHTML=schoolPage(schoolBy(openSchool));wireSchool();return}
+  $("#title").textContent=view==="today"?t("hi")+", "+(me().name||"").split(" ")[0]:t(view);
+  if(view==="coverage"){v.innerHTML=coverageView();wireCoverage();return}
+  v.innerHTML=view==="today"?todayView():view==="schools"?schoolsView():view==="progress"?progressView():moreView();
+  wire();
+}
+
+/* ---------- Today: what's next ---------- */
+function planRow(p,late){
+  const s=schoolBy(p.school)||{name:""};
+  const sec=p.section!==""&&p.section!=null&&s.sections&&s.sections[p.section]?" · "+s.sections[p.section].label:"";
+  return `<div class="ex plan${late?" late":""}" data-school="${p.school}"><span class="when"><b>${esc(p.time||"—")}</b><small>${esc(fmtD(p.date).split(" ")[0])}</small></span>
+   <div style="min-width:0;flex:1"><div class="t">${esc(typeName(p.type))}${p.batch?" · "+esc(p.batch):""}</div><div class="m">${t("school")} ${p.school} · ${esc(s.name)}${esc(sec)}${late?" · "+dDiff(p.date,todayIso())+" "+t("daysLate"):""}</div></div>
+   <button class="btn solid" data-logp="${esc(p.id)}">${t("logThis")}</button></div>`;
+}
+function todayView(){
+  const T=todayIso(), tm=dPlus(T,1), wkEnd=dPlus(T,7);
+  const pl=data.plan.filter(p=>p.status==="planned");
+  const today=pl.filter(p=>p.date===T), tomorrow=pl.filter(p=>p.date===tm), later=pl.filter(p=>p.date>tm&&p.date<=wkEnd);
+  const late=pl.filter(p=>p.date<T).slice(-12).reverse();
+  const hol=holidayOf(T);
+  // schools whose next step has no booking
+  const toBook=[];
+  data.schools.forEach(s=>{const ty=types().find(ty=>{const st=s.steps[ty.id];return st&&st.state!=="done"});if(!ty)return;const st=s.steps[ty.id];if(st.state==="todo"||st.state==="partly")toBook.push([s,ty])});
+  const sec=(title,rows,empty)=>`<div class="ctitle"><h2>${esc(title)}</h2><small>${rows.length||""}</small></div>${rows.length?`<div class="list">${rows.join("")}</div>`:empty?`<div class="empty small">${esc(empty)}</div>`:""}`;
+  let h="";
+  if(data.lastCase) h+=`<div class="card casecard"><small>${t("caseId")}</small><b>${esc(data.lastCase.caseId)}</b><span>${esc(data.lastCase.status==="pocso-pending"?t("pocsoPending"):t("complete"))}</span><button class="btn" id="caseOk">${t("close")}</button></div>`;
+  if(hol) h+=`<div class="banner">${esc(t("onHoliday"))} · ${esc(hol)}</div>`;
+  h+=sec(t("todayS")+" · "+fmtD(T),today.map(p=>planRow(p)),t("nothingToday"));
+  const nd=notesDue(); if(nd.length) h+=sec(t("notesToWrite"),nd.map(x=>`<div class="ex" data-school="${x.school}"><span class="when"><b>${esc(x.time||"")}</b><small>${esc(fmtD(String(x.date)).split(" ")[0])}</small></span><div style="min-width:0;flex:1"><div class="t">${esc(typeName(x.type))}${x.batch?" · "+esc(x.batch):""}</div><div class="m">${t("school")} ${x.school} · ${esc((schoolBy(x.school)||{}).name||"")}</div></div><button class="btn solid" data-note="${esc(x.id)}">${t("writeNote")}</button></div>`));
+  if(late.length) h+=sec(t("overdue"),late.map(p=>planRow(p,true)));
+  if(tomorrow.length) h+=sec(t("tomorrow")+" · "+fmtD(tm),tomorrow.map(p=>planRow(p)));
+  if(later.length) h+=sec(t("thisWeek"),later.map(p=>planRow(p)));
+  if(toBook.length) h+=sec(t("toBook"),toBook.slice(0,20).map(([s,ty])=>`<div class="ex" data-school="${s.no}"><span class="num badge">${s.no}</span><div style="min-width:0;flex:1"><div class="t">${esc(typeName(ty.id))}</div><div class="m">${esc(s.name)} · ${esc(trackerLine(s))}</div></div><button class="btn" data-bookp="${s.no}|${ty.id}">${t("book")}</button></div>`));
+  if(!data.schools.length) h+=`<div class="empty"><b>${esc(t("none"))}</b>${esc(lang==="hi"?"समन्वयक आपको स्कूल देंगे।":"A coordinator will assign your schools.")}</div>`;
+  return h;
+}
+
+/* ---------- Schools ---------- */
+function schoolsView(){
+  if(!data.schools.length) return `<div class="empty"><b>${esc(t("none"))}</b></div>`;
+  return `<div class="legend2">${[["st-ok",t("done")],["st-part",t("partly")],["st-plan",t("planned")],["st-late",t("overdue")],["st-todo","—"]].map(([c,l])=>`<span><i class="${c}"></i>${esc(l)}</span>`).join("")}</div>
+  <div class="list">${data.schools.map(s=>`<button class="ex srow" data-school="${s.no}"><span class="num badge">${s.no}</span><div style="min-width:0;flex:1"><div class="t">${esc(s.name)}</div><div class="m">${esc(trackerLine(s))}${s.facilitators&&s.facilitators.length?" · "+s.facilitators.map(personName).join(", "):""}</div>${stepDots(s)}</div><span class="chev">›</span></button>`).join("")}</div>`;
+}
+function schoolPage(s){
+  if(!s) return `<div class="empty"><b>${esc(t("nothingHere"))}</b></div>`;
+  const tr=s.tracker||{}, R=rules();
+  const logs=data.sessions.filter(x=>x.school===s.no).slice(0,30);
+  const books=data.plan.filter(p=>p.school===s.no&&p.status==="planned");
+  const pop=s.girls+s.boys;
+  let h=`<div class="card sc"><div class="sch"><div><b>${esc(s.name)}</b><small>${esc(s.address||"")}</small></div><span class="code">${esc(s.code)}</span></div>
+   <div class="kv2">
+    <div><small>${t("headmaster")}</small><b>${esc(s.hm||"—")}</b>${s.phone?`<a class="btn" href="tel:${esc(s.phone)}">${t("call")}</a>`:""}</div>
+    <div><small>${t("enrolment")}</small><b class="num">${pop.toLocaleString("en-IN")}</b><span class="sm">${s.girls} ${t("girls")} · ${s.boys} ${t("boys")}${s.assumed?" · "+t("assumed"):""}</span></div>
+    ${s.medium?`<div><small>${t("medium")}</small><b>${esc(s.medium)}</b></div>`:""}${s.timing?`<div><small>${t("timing")}</small><b>${esc(s.timing)}</b></div>`:""}
+   </div>
+   <div class="acts">${s.map?`<a class="btn" target="_blank" rel="noopener" href="${esc(/^https?:/.test(s.map)?s.map:"https://www.google.com/maps/search/?api=1&query="+(s.lat!=null?s.lat+","+s.lng:encodeURIComponent(s.address||s.name)))}">${t("map")}</a>`:(s.lat!=null?`<a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${s.lat},${s.lng}">${t("map")}</a>`:"")}
+    <button class="btn solid" id="scLog">${t("logSession")}</button><button class="btn" id="scBook">${t("bookSession")}</button></div></div>`;
+  h+=`<div class="card trk"><div class="trkh"><b>${esc(trackerLine(s))}</b><small>${tr.baselineDone?t("baselineDone")+" "+fmtD(tr.baselineDone):tr.baselinePlanned?t("baselineOn")+" "+fmtD(tr.baselinePlanned):t("noBaseline")}</small></div>
+   ${tr.endlineFrom?`<div class="endl"><span>${t("endlineFrom")}</span><b>${fmtD(tr.endlineFrom)}</b><em class="${tr.windowDays<7?"bad":tr.windowDays<21?"warn":""}">${tr.windowDays} ${t("daysLeft")}</em></div>`:""}
+   ${(tr.flags||[]).includes("baseline-late")?`<div class="banner warn">${esc(t("lateBaseline"))}</div>`:""}</div>`;
+  h+=`<div class="ctitle"><h2>${t("steps")}</h2></div><div class="list">${types().map(ty=>{const st=s.steps[ty.id]||{};return `<div class="ex step"><i class="dot ${STATE_C[st.state]||"st-todo"}"></i><div style="min-width:0;flex:1"><div class="t">${esc(typeName(ty.id))}</div><div class="m">${st.state==="done"?t("done")+(st.lastDone?" · "+fmtD(st.lastDone):""):st.next?t("dueOn")+" "+fmtD(st.next.date)+(st.next.time?" "+st.next.time:""):st.state==="partly"?t("partly"):"—"}${st.logs?" · "+st.logs+" "+t("sessionsDone"):""}</div></div>${st.state!=="done"?`<button class="btn" data-bookp="${s.no}|${ty.id}">${t("book")}</button>`:""}</div>`}).join("")}</div>`;
+  if(books.length) h+=`<div class="ctitle"><h2>${t("bookings")}</h2></div><div class="list">${books.map(p=>planRow(p,p.date<todayIso())).join("")}</div>`;
+  h+=`<div class="ctitle"><h2>${t("recent")}</h2></div>${logs.length?`<div class="list">${logs.map(x=>`<div class="ex"><span class="when"><b>${esc(x.time||"")}</b><small>${esc(fmtD(x.date))}</small></span><div style="min-width:0;flex:1"><div class="t">${esc(typeName(x.type))}${x.batch?" · "+esc(x.batch):""}</div><div class="m">${esc(t(x.status))}${(+x.girls||+x.boys)?" · "+((+x.girls||0)+(+x.boys||0))+" ("+x.girls+"/"+x.boys+")":""}${x.consentIn?" · "+x.consentIn+"/"+x.consentOut+" "+t("consentIn"):""} · ${esc(String(x.facilitators||"").split(",").filter(Boolean).map(personName).join(", "))}</div>${x.flag?`<span class="tag warn">${esc(flagText(x.flag,x.distance))}</span>`:""}${x._local?`<span class="tag">${esc(t("toSync"))}</span>`:""}</div>${(x.status==="done"||x.status==="partly")&&!x._local?(noteDone(x)?`<span class="notedone">✓ ${t("noteDone")}</span>`:`<button class="btn" data-note="${esc(x.id)}">${t("writeNote")}</button>`):""}</div>`).join("")}</div>`:`<div class="empty small">${t("noLogs")}</div>`}`;
+  if(isCoord()){
+    h+=`<div class="ctitle"><h2>${t("assign")}</h2></div><div class="card">${pick("facs",(data.roster||[]).filter(r=>r.role==="fac"||r.role==="coord").map(r=>[r.id,r.name]),s.facilitators||[],true)}<button class="btn solid" id="scAssign" style="margin-top:10px">${t("save")}</button></div>
+    <div class="menu" style="margin-top:14px"><button class="mi" id="scHere"><div><b>${t("setHere")}</b><small>${s.lat!=null?s.lat.toFixed(5)+", "+s.lng.toFixed(5)+" · "+esc(s.pointSource):"—"}</small></div></button></div>`;
+  }
+  return `<button class="back" id="scBack">‹ ${t("schools")}</button>`+h;
+}
+function wireSchool(){
+  const s=schoolBy(openSchool);
+  $("#scBack").onclick=()=>{openSchool=null;render()};
+  if(!s) return;
+  $("#scLog").onclick=()=>openLog({school:s.no});
+  $("#scBook").onclick=()=>openBook({school:s.no});
+  wireCommon();
+  const a=$("#scAssign"); if(a){wirePick($("#view"));a.onclick=()=>{enqueue({op:"f_assign",school:s.no,facilitators:pickVal($("#view"),"facs")});toast(t("saved"))}}
+  const hr=$("#scHere"); if(hr) hr.onclick=()=>{if(!navigator.geolocation)return toast(t("locOff"));toast(t("locating"));navigator.geolocation.getCurrentPosition(async p=>{
+    if(p.coords.accuracy>60){toast(t("accuracy")+" ±"+Math.round(p.coords.accuracy)+" m — "+(lang==="hi"?"खुले में फिर कोशिश करें":"try again in the open"));return}
+    const r=await api("f_place",{school:s.no,lat:p.coords.latitude,lng:p.coords.longitude}).catch(()=>({ok:false,error:t("offline")}));toast(r.ok?t("saved"):r.error);if(r.ok)load(true)},()=>toast(t("locOff")),{enableHighAccuracy:true,timeout:20000,maximumAge:0})};
+}
+
+/* ---------- Progress (coordinators) ---------- */
+function progressView(){
+  const P=data.progress; if(!P) return "";
+  const kpi=(v,l,sub)=>`<div class="kpi2"><b class="num">${v}</b><span>${esc(l)}</span>${sub?`<small>${esc(sub)}</small>`:""}</div>`;
+  let h=`<div class="kpis">${kpi(P.baselineDone+" / "+data.schools.length,t("kpiSchools"))}${kpi(P.reached.toLocaleString("en-IN"),t("kpiReached"),"/ "+P.enrolment.toLocaleString("en-IN")+(P.assumed?" · "+P.assumed+" "+t("assumed"):""))}${kpi(P.consentIn+" / "+P.consentOut,t("kpiConsent"))}${kpi(P.sessionsThisWeek,t("kpiWeek"))}</div>`;
+  h+=`<div class="ctitle"><h2>${t("grid")}</h2></div><div class="card gridwrap"><table class="pgrid"><thead><tr><th></th>${types().map(ty=>`<th>${esc(SHORT[lang][ty.id]||ty.id)}</th>`).join("")}<th>${t("endlineFrom")}</th></tr></thead><tbody>${data.schools.map(s=>`<tr data-school="${s.no}"><th><b>${s.no}</b> <span>${esc(s.name.slice(0,22))}</span></th>${types().map(ty=>{const st=s.steps[ty.id]||{};return `<td><i class="${STATE_C[st.state]||"st-todo"}" title="${esc(st.next?fmtD(st.next.date):st.lastDone?fmtD(st.lastDone):"")}"></i></td>`}).join("")}<td class="sm ${s.tracker.windowDays!=null&&s.tracker.windowDays<7?"bad":""}">${s.tracker.endlineFrom?esc(fmtD(s.tracker.endlineFrom)):"—"}</td></tr>`).join("")}</tbody></table></div>`;
+  if(P.overdue.length) h+=`<div class="ctitle"><h2>${t("overdue")}</h2><small>${P.overdue.length}</small></div><div class="list">${P.overdue.slice(0,20).map(o=>`<div class="ex" data-school="${o.school}"><span class="num badge late">${o.school}</span><div style="flex:1"><div class="t">${esc(typeName(o.type))}</div><div class="m">${t("dueOn")} ${fmtD(o.date)} · ${o.days} ${t("daysLate")}</div></div></div>`).join("")}</div>`;
+  h+=`<div class="ctitle"><h2>${t("flaggedLogs")}</h2><small>${P.flagged.length||""}</small></div>${P.flagged.length?`<div class="list">${P.flagged.map(f=>`<div class="ex"><span class="num badge">${f.school}</span><div style="flex:1;min-width:0"><div class="t">${esc(typeName(f.type))} · ${esc(fmtD(f.date))}</div><div class="m">${esc(personName(f.loggedBy))} · ${esc(flagText(f.flag,f.distance))}</div></div><button class="btn" data-review="${esc(f.id)}">${t("review")}</button></div>`).join("")}</div>`:`<div class="empty small">${t("none")}</div>`}`;
+  h+=`<div class="ctitle"><h2>${t("load")}</h2></div><div class="list">${Object.keys(P.load).map(k=>`<div class="ex"><div style="flex:1"><div class="t">${esc(personName(k))}</div><div class="m">${P.load[k].schools} ${t("schools").toLowerCase()} · ${P.load[k].upcoming} ${t("upcoming")} · ${P.load[k].done} ${t("done").toLowerCase()}</div></div></div>`).join("")}</div>`;
+  if(P.unassigned.length) h+=`<div class="ctitle"><h2>${t("unassigned")}</h2><small>${P.unassigned.length}</small></div><div class="chipsw">${P.unassigned.map(n=>`<button class="chip" data-school="${n}">${t("school")} ${n}</button>`).join("")}</div>`;
+  return h;
+}
+
+/* ---------- More ---------- */
+function moreView(){
+  const ex=data.expenses||[], ap=data.approvals||[];
+  const stTag=x=>({added:`<span class="tag ok">${t("added")}</span>`,approved:`<span class="tag ok">${t("approved")}</span>`,rejected:`<span class="tag red">${t("rejected")}${x.reason?" · "+esc(x.reason):""}</span>`,pending:`<span class="tag warn">${t("pending")}</span>`,sending:`<span class="tag">${t("toSync")}</span>`})[x.status]||"";
+  let h="";
+  if(me().approver) h+=`<div class="ctitle"><h2>${t("approvals")}</h2><small>${ap.length||""}</small></div>${ap.length?`<div class="list">${ap.map(x=>`<div class="ex apv"><div style="flex:1;min-width:0"><div class="t">${inr(x.amount)} · ${esc(x.category)}</div><div class="m">${esc(x.submitterName)} · ${esc(x.school)}${x.activity?" · "+esc(x.activity):""} · ${esc(fmtD(x.date))}</div>${x.note?`<div class="m">${esc(x.note)}</div>`:""}${x.receipt?`<a class="lnk" href="${esc(x.receipt)}" target="_blank" rel="noopener">${t("receipt")} ↗</a>`:""}</div><div class="apbtn"><button class="btn solid" data-apv="${esc(x.id)}">${t("approve")}</button><button class="btn o" data-rej="${esc(x.id)}">${t("reject")}</button></div></div>`).join("")}</div>`:`<div class="empty small">${t("none")}</div>`}`;
+  h+=`<div class="ctitle"><h2>${t("expenses")}</h2><button id="newEx">+ ${t("newExpense")}</button></div>${ex.length?`<div class="list">${ex.slice(0,40).map(x=>`<div class="ex"><div style="flex:1;min-width:0"><div class="t">${inr(x.amount)} · ${esc(x.category)}</div><div class="m">${esc(fmtD(x.date))} · ${esc(x.school)}${x.note?" · "+esc(x.note):""}</div>${stTag(x)}</div></div>`).join("")}</div>`:`<div class="empty small">${t("nothingHere")}</div>`}`;
+  h+=`<div class="ctitle"><h2>${t("referrals")}</h2><button id="newRef">+ ${t("newReferral")}</button></div>`;
+  if(data.referrals) h+=data.referrals.length?`<div class="list">${data.referrals.map(r=>`<div class="ex"><div style="flex:1"><div class="t num">${esc(r.caseId)} · ${esc(r.type)}</div><div class="m">${esc(fmtD(String(r.date)))} · ${esc(r.age)} · ${esc(r.gender)}${r.pocso?" · POCSO":""}</div>${r.pocso?(r.reported?`<span class="tag ok">${t("complete")} · ${esc(r.reportDate)}</span>`:`<span class="tag red">${t("pocsoPending")}</span>`):""}</div>${r.pocso&&!r.reported?`<button class="btn" data-chk="${esc(r.caseId)}">${t("confirmReport")}</button>`:""}</div>`).join("")}</div>`:`<div class="empty small">${t("none")}</div>`;
+  else h+=`<div class="empty small">${esc(t("refNote"))}</div>`;
+  h+=`<div class="ctitle"><h2>${t("more")}</h2></div><div class="menu">
+    ${data.coverage?`<button class="mi" id="mCov"><div><b>${t("coverage")}</b><small>${t("covSub")}</small></div></button>`:""}
+    <button class="mi" id="mLang"><div><b>${t("language")}</b><small>${lang==="hi"?"हिंदी":"English"}</small></div></button>
+    ${isCoord()?`<button class="mi" id="mSync"><div><b>${t("syncMaster")}</b><small>${t("lastSync")}: ${data.lastSync?esc(new Date(data.lastSync).toLocaleString(lang==="hi"?"hi-IN":"en-IN",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})):"—"}</small></div></button>`:""}
+    ${data.masterUrl?`<a class="mi" href="${esc(data.masterUrl)}" target="_blank" rel="noopener"><div><b>${t("openMaster")}</b><small>${t("viewOnly")}</small></div></a>`:""}
+    <button class="mi" id="mPass"><div><b>${t("passcode")}</b><small>${esc(me().name||"")}</small></div></button>
+    <button class="mi" id="mOut"><div><b>${t("signOut")}</b><small>${VERSION}</small></div></button></div>`;
+  return h;
+}
+
+/* ---------- wiring ---------- */
+function wireCommon(){
+  $$("#view [data-school]").forEach(el=>el.onclick=e=>{if(e.target.closest("button[data-logp],button[data-bookp],button[data-review],button[data-note]"))return;openSchool=+el.dataset.school;render();scrollTo(0,0)});
+  $$("#view [data-logp]").forEach(b=>b.onclick=()=>{const p=data.plan.find(x=>x.id===b.dataset.logp);openLog({school:p.school,type:p.type,section:p.section,batch:p.batch,scheduleId:p.source==="app"?p.id:"",date:p.date<=todayIso()?todayIso():p.date})});
+  $$("#view [data-bookp]").forEach(b=>b.onclick=()=>{const [no,ty]=b.dataset.bookp.split("|");openBook({school:+no,type:ty})});
+  $$("#view [data-review]").forEach(b=>b.onclick=()=>enqueue({op:"f_review",id:b.dataset.review}));
+  $$("#view [data-note]").forEach(b=>b.onclick=()=>{const x=data.sessions.find(y=>y.id===b.dataset.note);if(x)openNote(x)});
+}
+function wire(){
+  wireCommon();
+  const co=$("#caseOk"); if(co) co.onclick=()=>{delete data.lastCase;persist();render()};
+  const ne=$("#newEx"); if(ne) ne.onclick=openExpense;
+  const nr=$("#newRef"); if(nr) nr.onclick=openReferral;
+  $$("[data-apv]").forEach(b=>b.onclick=()=>{enqueue({op:"f_decide",id:b.dataset.apv,approve:true});toast(t("approved"))});
+  $$("[data-rej]").forEach(b=>b.onclick=()=>{const why=prompt(t("rejectWhy"));if(why&&why.trim()){enqueue({op:"f_decide",id:b.dataset.rej,approve:false,reason:why.trim()})}});
+  $$("[data-chk]").forEach(b=>b.onclick=()=>openCheckpoint(b.dataset.chk));
+  const mc=$("#mCov"); if(mc) mc.onclick=()=>{view="coverage";render();scrollTo(0,0)};
+  const ml=$("#mLang"); if(ml) ml.onclick=()=>setLang(lang==="hi"?"en":"hi");
+  const ms=$("#mSync"); if(ms) ms.onclick=async()=>{toast(t("saving"));try{const r=await api("f_sync");if(r.ok){data=Object.assign(r,{lastCase:data.lastCase});persist();toast(t("refreshDone"))}else toast(r.error)}catch(e){toast(t("offline"))}render()};
+  const mp=$("#mPass"); if(mp) mp.onclick=async()=>{const p=prompt(t("newPh"));if(!p)return;if(p.length<6)return toast(t("short"));const r=await api("change",{newPass:p}).catch(()=>({ok:false,error:t("offline")}));if(r.ok){cfg.pass=p;ls("by.cfg",cfg);toast(t("saved"))}else toast(r.error)};
+  const mo=$("#mOut"); if(mo) mo.onclick=()=>signOut();
+}
+function setLang(l){lang=l;cfg.lang=l;cfg.langSet=true;ls("by.cfg",cfg);if(cfg.pass)api("f_lang",{lang:l}).catch(()=>{});render();paintSetup()}
+$("#langBtn").onclick=()=>setLang(lang==="hi"?"en":"hi");
+
+/* ---------- GPS ---------- */
+let geoWatch=null, geo=null;
+function startGeo(cb){
+  geo=null; stopGeo();
+  if(!navigator.geolocation){cb&&cb();return}
+  geoWatch=navigator.geolocation.watchPosition(p=>{if(!geo||p.coords.accuracy<geo.accuracy)geo={lat:p.coords.latitude,lng:p.coords.longitude,accuracy:Math.round(p.coords.accuracy)};cb&&cb()},()=>{geo=geo||{off:true};cb&&cb()},{enableHighAccuracy:true,timeout:30000,maximumAge:15000});
+}
+function stopGeo(){if(geoWatch!=null&&navigator.geolocation)navigator.geolocation.clearWatch(geoWatch);geoWatch=null}
+function metres(a,b,c,d){const R=6371000,r=x=>x*Math.PI/180;const x=Math.sin(r(c-a)/2)**2+Math.cos(r(a))*Math.cos(r(c))*Math.sin(r(d-b)/2)**2;return Math.round(2*R*Math.asin(Math.sqrt(x)))}
+
+/* ---------- Log a session ---------- */
+function openLog(pre){
+  pre=pre||{};
+  const mine=data.schools; if(!mine.length) return toast(t("none"));
+  let s=schoolBy(pre.school)||(mine.length===1?mine[0]:null);
+  const f={id:rid("S"),type:pre.type||"",section:pre.section===""||pre.section==null?0:pre.section,batch:pre.batch||"",date:pre.date||todayIso(),time:nowHM(),status:"done",facilitators:[cfg.who],scheduleId:pre.scheduleId||""};
+  if(s&&!f.type){const nx=types().find(ty=>{const st=s.steps[ty.id];return st&&st.state!=="done"});f.type=nx?nx.id:"children"}
+  const people=(data.roster||[]).filter(r=>r.role!=="admin").map(r=>[r.id,r.name.split(" ")[0]]);
+  const sh=openSheet(`<header><button id="lC">${t("cancel")}</button><h3>${t("logSession")}</h3><button class="strong" id="lS">${t("save")}</button></header><div class="body">
+   <div class="fgroup"><div class="frow"><label>${t("school")}</label><select id="lSch"><option value="">${t("pick")}</option>${mine.map(x=>`<option value="${x.no}" ${s&&s.no===x.no?"selected":""}>${x.no} · ${esc(x.name)}</option>`).join("")}</select></div><div class="sep"></div>
+    <div class="frow"><label>${t("code")}</label><input id="lCode" autocapitalize="characters" autocomplete="off" placeholder="INS-0000"></div><div class="hint" id="codeHint">${t("codeHint")}</div></div>
+   <div class="geo" id="lGeo">${t("locating")}</div>
+   <div class="fgroup"><div class="frow col"><label>${t("session")}</label>${pick("type",types().map(ty=>[ty.id,typeName(ty.id)]),f.type)}</div>
+    <div id="secBox"></div><div class="sep"></div>
+    <div class="frow"><label>${t("batch")}</label><input id="lBatch" value="${esc(f.batch)}" placeholder="5th A"></div><div class="sep"></div>
+    <div class="frow"><label>${t("date")}</label><input type="date" id="lDate" value="${f.date}" max="${todayIso()}"></div><div class="sep"></div>
+    <div class="frow"><label>${t("time")}</label><input type="time" id="lTime" value="${f.time}"></div></div>
+   <div class="fgroup"><div class="frow col"><label>${t("status")}</label>${pick("status",[["done",t("done")],["partly",t("partly")],["postponed",t("postponed")],["cancelled",t("cancelled")]],f.status)}</div>
+    <div id="reasonBox" hidden><div class="sep"></div><div class="frow"><label>${t("reason")}</label><input id="lReason"></div></div></div>
+   <div class="fgroup" id="countBox"><div class="frow"><label>${t("girls")}</label><input id="lG" inputmode="numeric" placeholder="0"></div><div class="sep"></div><div class="frow"><label>${t("boys")}</label><input id="lB" inputmode="numeric" placeholder="0"></div><div class="sep"></div><div class="frow"><label>${t("planned")}</label><input id="lP" inputmode="numeric" placeholder="—"></div></div>
+   <div class="fgroup" id="consBox" hidden><div class="frow"><label>${t("consentOut")}</label><input id="lCO" inputmode="numeric"></div><div class="sep"></div><div class="frow"><label>${t("consentIn")}</label><input id="lCI" inputmode="numeric"></div></div>
+   <div class="fgroup"><div class="frow col"><label>${t("facilitators")}</label>${pick("facs",people,f.facilitators,true)}</div></div>
+   <div class="fgroup"><textarea id="lNotes" rows="3" placeholder="${t("notes")}"></textarea></div>
+   <div class="err" id="lErr"></div></div>`,"wide");
+  wirePick(sh,()=>paint());
+  const paintGeo=()=>{const g=$("#lGeo");if(!g)return;if(!geo){g.className="geo";g.textContent=t("locating");return}
+    if(geo.off){g.className="geo bad";g.textContent=t("locOff");return}
+    let d="";if(s&&s.lat!=null){const m=metres(geo.lat,geo.lng,s.lat,s.lng);d=" · "+m+" m"+(m>rules().farMetres?" "+t("far"):"");g.className="geo "+(m>rules().farMetres?"warn":"ok")}else g.className="geo ok";
+    g.textContent=t("locOk")+" ("+t("accuracy")+" ±"+geo.accuracy+" m)"+d};
+  const paint=()=>{
+    const ty=pickVal(sh,"type"), st=pickVal(sh,"status");
+    $("#reasonBox").hidden=!(st==="postponed"||st==="cancelled");
+    $("#consBox").hidden=ty!=="consent";
+    $("#countBox").hidden=st==="postponed"||st==="cancelled";
+    const secs=s&&s.sections||[];
+    $("#secBox").innerHTML=secs.length>1?`<div class="sep"></div><div class="frow col"><label>${t("section")}</label>${pick("section",secs.map((x,i)=>[i,x.label+" · "+(x.girls+x.boys)]),f.section)}</div>`:"";
+    wirePick($("#secBox"));
+    const c=$("#lCode").value.trim(); const h=$("#codeHint");
+    const norm=v=>String(v||"").toUpperCase().replace(/[^A-Z0-9]/g,"").replace(/^INS/,"");
+    if(c&&s){const ok=norm(c)===norm(s.code);h.className="hint "+(ok?"ok":"bad");h.textContent=ok?"✓ "+s.name:t("wrongCode")}else{h.className="hint";h.textContent=t("codeHint")}
+    paintGeo();
+  };
+  $("#lSch").onchange=()=>{s=schoolBy($("#lSch").value);paint()};
+  $("#lCode").oninput=paint;
+  paint(); startGeo(paintGeo);
+  $("#lC").onclick=closeSheet;
+  $("#lS").onclick=()=>{
+    const E=$("#lErr"); E.textContent="";
+    if(!s){E.textContent=t("pick")+" "+t("school");return}
+    const code=$("#lCode").value.trim(); if(!code){E.textContent=t("needCode");return}
+    const norm=v=>String(v||"").toUpperCase().replace(/[^A-Z0-9]/g,"").replace(/^INS/,"");
+    if(norm(code)!==norm(s.code)){E.textContent=t("wrongCode");return}
+    const ty=pickVal(sh,"type"), st=pickVal(sh,"status");
+    if(!ty){E.textContent=t("pick")+" "+t("session");return}
+    const reason=$("#lReason").value.trim(); if((st==="postponed"||st==="cancelled")&&!reason){E.textContent=t("reason")+"?";return}
+    const g=+$("#lG").value||0,b=+$("#lB").value||0;
+    if((st==="done"||st==="partly")&&!g&&!b&&ty!=="onboard"&&ty!=="consent"){E.textContent=t("headcount")+"?";return}
+    const item={id:f.id,school:s.no,code,type:ty,section:+pickVal(sh,"section")||0,batch:$("#lBatch").value.trim(),date:$("#lDate").value||todayIso(),time:$("#lTime").value,status:st,reason,
+      girls:g,boys:b,planned:+$("#lP").value||"",consentOut:+$("#lCO").value||"",consentIn:+$("#lCI").value||"",facilitators:pickVal(sh,"facs"),notes:$("#lNotes").value.trim(),scheduleId:f.scheduleId,
+      lat:geo&&!geo.off?geo.lat:"",lng:geo&&!geo.off?geo.lng:"",accuracy:geo&&!geo.off?geo.accuracy:""};
+    if(item.facilitators.length===0) item.facilitators=[cfg.who];
+    stopGeo(); closeSheet(); enqueue({op:"f_log",item}); toast(navigator.onLine?t("saved"):t("queued"));
+  };
+}
+
+/* ---------- Book a session ---------- */
+function openBook(pre){
+  pre=pre||{}; let s=schoolBy(pre.school);
+  const R=rules();
+  const sh=openSheet(`<header><button id="bC">${t("cancel")}</button><h3>${t("bookSession")}</h3><button class="strong" id="bS">${t("save")}</button></header><div class="body">
+   <div class="fgroup"><div class="frow"><label>${t("school")}</label><select id="bSch"><option value="">${t("pick")}</option>${data.schools.map(x=>`<option value="${x.no}" ${s&&s.no===x.no?"selected":""}>${x.no} · ${esc(x.name)}</option>`).join("")}</select></div></div>
+   <div class="fgroup"><div class="frow col"><label>${t("session")}</label>${pick("type",types().map(ty=>[ty.id,typeName(ty.id)]),pre.type||"")}</div><div id="bSec"></div><div class="sep"></div>
+    <div class="frow"><label>${t("date")}</label><input type="date" id="bDate" min="${todayIso()}" max="${R.pilotEnd}"></div><div class="hint" id="bHint"></div><div class="sep"></div>
+    <div class="frow"><label>${t("time")}</label><input type="time" id="bTime" value="10:30"></div><div class="sep"></div>
+    <div class="frow"><label>${t("batch")}</label><input id="bBatch" placeholder="5th A"></div></div>
+   <div class="fgroup"><textarea id="bNote" rows="2" placeholder="${t("notes")}"></textarea></div><div class="err" id="bErr"></div></div>`);
+  wirePick(sh,()=>check());
+  const check=()=>{
+    const ty=pickVal(sh,"type"), d=$("#bDate").value, H=$("#bHint"), E=$("#bErr"); E.textContent=""; H.className="hint"; H.textContent="";
+    const secs=s&&s.sections||[]; if(!$("#bSec").dataset.s||$("#bSec").dataset.s!=String(s&&s.no)){$("#bSec").dataset.s=String(s&&s.no);$("#bSec").innerHTML=secs.length>1?`<div class="sep"></div><div class="frow col"><label>${t("section")}</label>${pick("section",[["",t("all")]].concat(secs.map((x,i)=>[i,x.label])),"")}</div>`:"";wirePick($("#bSec"))}
+    if(ty==="review"&&s){const tr=s.tracker||{};if(!tr.baselineDone){H.className="hint bad";H.textContent=t("noBaseline");return false}
+      const e=dPlus(tr.baselineDone,R.endlineDays); if(!d){$("#bDate").min=e;$("#bDate").max=R.lastEndline;H.textContent=t("earliestEnd")+": "+fmtD(e);return true}
+      if(d<e){H.className="hint bad";H.textContent=t("earliestEnd")+": "+fmtD(e);return false}
+      if(d>R.lastEndline){H.className="hint bad";H.textContent=t("afterLast");return false}}
+    else {$("#bDate").min=todayIso();$("#bDate").max=R.pilotEnd}
+    if(d){const h=holidayOf(d);if(h){H.className="hint bad";H.textContent=t("closed")+" · "+h;return false}
+      if(ty==="baseline"&&d>R.lastBaseline){H.className="hint warn";H.textContent=t("lateBaseline")} else H.textContent=fmtD(d)}
+    return true;
+  };
+  $("#bSch").onchange=()=>{s=schoolBy($("#bSch").value);check()}; $("#bDate").onchange=check; check();
+  $("#bC").onclick=closeSheet;
+  $("#bS").onclick=()=>{
+    const E=$("#bErr"), ty=pickVal(sh,"type"), d=$("#bDate").value;
+    if(!s){E.textContent=t("pick")+" "+t("school");return} if(!ty){E.textContent=t("pick")+" "+t("session");return} if(!d){E.textContent=t("date")+"?";return}
+    if(!check()){E.textContent=$("#bHint").textContent;return}
+    const sec=pickVal(sh,"section");
+    enqueue({op:"f_schedule",item:{id:rid("P"),school:s.no,type:ty,section:sec===""?"":+sec,date:d,time:$("#bTime").value,batch:$("#bBatch").value.trim(),note:$("#bNote").value.trim(),assignee:s.facilitators||[]}});
+    closeSheet(); toast(t("saved"));
+  };
+}
+
+/* ---------- Expense ---------- */
+function shrink(file){return new Promise((res,rej)=>{const img=new Image(),u=URL.createObjectURL(file);img.onload=()=>{const k=Math.min(1,1400/Math.max(img.width,img.height));const c=document.createElement("canvas");c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext("2d").drawImage(img,0,0,c.width,c.height);URL.revokeObjectURL(u);res(c.toDataURL("image/jpeg",.78))};img.onerror=rej;img.src=u})}
+function openExpense(){
+  let photo="";
+  const acts=(data.activities||[]).map(a=>a[1]);
+  const sh=openSheet(`<header><button id="eC">${t("cancel")}</button><h3>${t("newExpense")}</h3><button class="strong" id="eS">${t("save")}</button></header><div class="body">
+   <div class="amt"><span>₹</span><input id="eAmt" inputmode="decimal" placeholder="0" autocomplete="off"></div>
+   <div class="fgroup"><div class="frow col"><label>${t("category")}</label>${pick("cat",CATS.map(c=>[c[0],lang==="hi"?c[1]:c[0]]),"Travel")}</div><div class="sep"></div>
+    <div class="frow"><label>${t("date")}</label><input type="date" id="eDate" value="${todayIso()}" max="${todayIso()}"></div><div class="sep"></div>
+    <div class="frow"><label>${t("school")}</label><select id="eSch"><option value="all">${t("pilotWide")}</option>${data.schools.map(x=>`<option value="${x.no}">${x.no} · ${esc(x.name)}</option>`).join("")}</select></div><div class="sep"></div>
+    <div class="frow"><label>${t("activity")}</label><select id="eAct"><option value="">—</option>${acts.map(a=>`<option>${esc(a)}</option>`).join("")}</select></div><div class="sep"></div>
+    <div class="frow"><label>${t("notes")}</label><input id="eNote" placeholder="${lang==="hi"?"जैसे स्कूल 3 तक ऑटो":"e.g. Auto to School 3"}"></div></div>
+   <div class="fgroup"><label class="receipt"><span class="thumb" id="eThumb">📷</span><div><b id="eRT">${t("receipt")}</b><small>${t("receiptNeed")}</small></div><input type="file" id="eFile" accept="image/*" capture="environment" hidden></label></div>
+   <div class="err" id="eErr"></div></div>`);
+  wirePick(sh);
+  $("#eFile").onchange=async ev=>{const f=ev.target.files[0];if(!f)return;try{photo=await shrink(f);$("#eThumb").innerHTML=`<img src="${photo}" alt="">`;$("#eRT").textContent=t("attached")}catch(e){toast("Photo?")}};
+  $("#eC").onclick=closeSheet;
+  $("#eS").onclick=()=>{const E=$("#eErr");const amt=Math.round((+String($("#eAmt").value).replace(/,/g,"")||0)*100)/100;
+    if(!(amt>0)){E.textContent=t("amount")+"?";return}
+    if(amt>rules().autoLimit&&!photo){E.textContent=t("receiptNeed");return}
+    const item={amount:amt,category:pickVal(sh,"cat"),date:$("#eDate").value||todayIso(),school:$("#eSch").value,activity:$("#eAct").value,note:$("#eNote").value.trim()};
+    const op={op:"f_expense",item,tmp:rid("T")}; if(photo) op.receiptData=photo;
+    closeSheet(); enqueue(op); toast(amt>rules().autoLimit?t("pending"):t("saved"));};
+}
+
+/* ---------- Referral (anonymous) ---------- */
+function openReferral(){
+  const sh=openSheet(`<header><button id="rC">${t("cancel")}</button><h3>${t("newReferral")}</h3><button class="strong" id="rS">${t("save")}</button></header><div class="body">
+   <div class="note">${esc(t("refNote"))}</div>
+   <div class="fgroup"><div class="frow col"><label>${t("refType")}</label>${pick("type",[["Police",lang==="hi"?"पुलिस":"Police"],["Hospital",lang==="hi"?"अस्पताल":"Hospital"],["Therapist",lang==="hi"?"थेरेपिस्ट":"Therapist"]],"")}</div><div class="sep"></div>
+    <div class="frow"><label>${t("age")}</label><input id="rAge" inputmode="numeric"></div><div class="sep"></div>
+    <div class="frow col"><label>${t("gender")}</label>${pick("gender",[["Girl",t("girl")],["Boy",t("boy")],["Other",t("other")],["Not said",t("notSaid")]],"")}</div><div class="sep"></div>
+    <div class="frow"><label>${t("date")}</label><input type="date" id="rDate" value="${todayIso()}" max="${todayIso()}"></div><div class="sep"></div>
+    <div class="frow"><label>${t("time")}</label><input type="time" id="rTime" value="${nowHM()}"></div></div>
+   <div class="fgroup"><div class="frow col"><label>${t("pocso")}</label>${pick("pocso",[["y",t("yes")],["n",t("no")]],"n")}</div>
+    <div id="rRep" hidden><div class="sep"></div><div class="frow col"><label>${t("reported")}</label>${pick("rep",[["y",t("yes")],["n",t("no")]],"n")}</div>
+     <div id="rRepD" hidden><div class="sep"></div><div class="frow"><label>${t("reportDate")}</label><input type="date" id="rRD" max="${todayIso()}"></div><div class="sep"></div><div class="frow"><label>${t("time")}</label><input type="time" id="rRT"></div></div></div></div>
+   <div class="err" id="rErr"></div></div>`);
+  wirePick(sh,()=>{$("#rRep").hidden=pickVal(sh,"pocso")!=="y";$("#rRepD").hidden=pickVal(sh,"rep")!=="y"});
+  $("#rC").onclick=closeSheet;
+  $("#rS").onclick=async()=>{const E=$("#rErr");const type=pickVal(sh,"type"),g=pickVal(sh,"gender"),age=$("#rAge").value;
+    if(!type){E.textContent=t("refType")+"?";return} if(age===""){E.textContent=t("age")+"?";return} if(!g){E.textContent=t("gender")+"?";return}
+    const pocso=pickVal(sh,"pocso")==="y", rep=pocso&&pickVal(sh,"rep")==="y";
+    if(rep&&!$("#rRD").value){E.textContent=t("reportDate")+"?";return}
+    const item={type,age:+age,gender:g,date:$("#rDate").value,time:$("#rTime").value,pocso,reported:rep,reportDate:rep?$("#rRD").value:"",reportTime:rep?$("#rRT").value:""};
+    $("#rS").disabled=true;
+    try{const r=await api("f_referral",{item});if(!r.ok){E.textContent=r.error;$("#rS").disabled=false;return}closeSheet();showCase(r.caseId,r.status);load(true)}
+    catch(e){closeSheet();enqueue({op:"f_referral",item,tmp:rid("T")});toast(lang==="hi"?"नेटवर्क आने पर केस ID दिखेगी":"The Case ID will appear once this syncs")}};
+}
+function showCase(id,status){openSheet(`<header><span style="min-width:64px"></span><h3>${t("caseId")}</h3><button class="strong" id="cOk">${t("close")}</button></header><div class="body"><div class="casebig num">${esc(id)}</div><p class="note">${esc(status==="pocso-pending"?(lang==="hi"?"POCSO: अनिवार्य रिपोर्ट अभी बाकी है। प्रजक्ता सर्वोत्तम को सूचना भेज दी गई है।":"POCSO: the mandatory report is still pending. Prajakta Sarwottam has been told."):t("refNote"))}</p></div>`);$("#cOk").onclick=()=>{closeSheet();if(data)delete data.lastCase;persist();render()}}
+function openCheckpoint(id){
+  openSheet(`<header><button id="kC">${t("cancel")}</button><h3>${esc(id)}</h3><button class="strong" id="kS">${t("save")}</button></header><div class="body"><div class="fgroup"><div class="frow"><label>${t("reportDate")}</label><input type="date" id="kD" max="${todayIso()}"></div><div class="sep"></div><div class="frow"><label>${t("time")}</label><input type="time" id="kT"></div></div><div class="err" id="kE"></div></div>`);
+  $("#kC").onclick=closeSheet;
+  $("#kS").onclick=async()=>{const d=$("#kD").value;if(!d){$("#kE").textContent=t("reportDate")+"?";return}const r=await api("f_checkpoint",{caseId:id,item:{reportDate:d,reportTime:$("#kT").value}}).catch(()=>({ok:false,error:t("offline")}));if(!r.ok){$("#kE").textContent=r.error;return}closeSheet();toast(t("saved"));load(true)};
+}
+
+/* ---------- sign in ---------- */
+function signOut(quiet){cfg={url:cfg.url,base:cfg.base,who:cfg.who,lang};ls("by.cfg",cfg);data=null;queue=[];persist();ls("by.data",null);if(!quiet)toast(t("signOut"));showSetup()}
+function paintSetup(){
+  $("#sIntro").textContent=t("whoUses"); $("#sUrl").textContent=t("pasteLink"); $("#sClaim").textContent=t("setupCode");
+  $("#pass").placeholder=t("passPh"); $("#newPass").placeholder=t("newPh"); $("#newPass2").placeholder=t("againPh"); $("#goBtn").textContent=t("go"); $("#ver").textContent=VERSION;
+  $("#whoSeg").innerHTML=PEOPLE.map(([id,n,r])=>`<button type="button" data-who="${id}" aria-pressed="${cfg.who===id}"><i class="${r}">${n[0]}</i><span>${esc(n)}<small>${esc(t(r))}</small></span></button>`).join("");
+  $$("#whoSeg button").forEach(b=>b.onclick=()=>pickWho(b.dataset.who));
+  $$(".slang button").forEach(b=>{b.setAttribute("aria-pressed",b.dataset.l===lang);b.onclick=()=>setLang(b.dataset.l)});
+}
+let pickSeq=0;
+function showSetup(){$("#setup").hidden=false;$("#urlBox").hidden=!!cfg.url;$("#apiUrl").value=cfg.url||"";$("#setupErr").textContent="";$("#signinBox").hidden=true;$("#claimBox").hidden=true;paintSetup();if(cfg.who&&cfg.url)pickWho(cfg.who)}
+async function pickWho(w){
+  cfg.who=w; ls("by.cfg",{url:cfg.url,base:cfg.base,who:w,lang:cfg.lang}); $$("#whoSeg button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.who===w));
+  const u=$("#apiUrl").value.trim(); if(u) cfg.url=u;
+  if(!cfg.url){$("#urlBox").hidden=false;$("#setupErr").textContent=t("pasteLink");return}
+  const my=++pickSeq; $("#setupWait").hidden=false; $("#signinBox").hidden=true; $("#claimBox").hidden=true; $("#setupErr").textContent="";
+  try{const r=await api("status"); if(my!==pickSeq)return; $("#setupWait").hidden=true; if(!r.ok)throw new Error(r.error);
+    (r.claimed?$("#signinBox"):$("#claimBox")).hidden=false; setTimeout(()=>(r.claimed?$("#pass"):$("#invite")).focus(),50);
+  }catch(e){if(my!==pickSeq)return;$("#setupWait").hidden=true;$("#urlBox").hidden=false;$("#setupErr").textContent=t("cantReach")}
+}
+$("#apiUrl").addEventListener("change",()=>{cfg.url=$("#apiUrl").value.trim();ls("by.cfg",cfg);if(cfg.who)pickWho(cfg.who)});
+$("#setupForm").onsubmit=async ev=>{
+  ev.preventDefault(); const E=$("#setupErr"); E.textContent="";
+  if(!cfg.who){E.textContent=t("tapName");return}
+  try{
+    if(!$("#claimBox").hidden){const a=$("#newPass").value,b=$("#newPass2").value;
+      if(a.length<6){E.textContent=t("short");return} if(a!==b){E.textContent=t("mismatch");return}
+      const r=await api("claim",{invite:$("#invite").value,newPass:a}); if(!r.ok){E.textContent=r.error;return} cfg.pass=a;
+    } else if(!$("#signinBox").hidden){cfg.pass=$("#pass").value;const r=await api("f_boot");if(!r.ok){cfg.pass="";E.textContent=r.error;return}data=r;persist()}
+    else return;
+    ls("by.cfg",cfg); $("#setup").hidden=true; ["#pass","#newPass","#newPass2","#invite"].forEach(s=>$(s).value=""); load();
+  }catch(e){E.textContent=t("cantReach")}
+};
+
+/* ---------- boot ---------- */
+$("#fab").onclick=()=>openLog(openSchool?{school:openSchool}:{});
+$("#refresh").onclick=()=>load();
+window.addEventListener("scroll",()=>$("#nav").classList.toggle("scrolled",window.scrollY>30),{passive:true});
+window.addEventListener("online",()=>load(true));
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&cfg.pass)load(true)});
+setInterval(()=>{if(cfg.pass&&!document.hidden&&$("#setup").hidden)load(true)},120000);
+render();
+if(!cfg.pass||!cfg.url) showSetup(); else load();
+if("serviceWorker" in navigator&&location.protocol==="https:") navigator.serviceWorker.register("sw.js").catch(()=>{});
+})();
+</script>
+</body></html>
