@@ -1226,16 +1226,12 @@ function todayView(){
 /* ---------- 23 Oct: where this is in Mumbai — Harbour line, stations, shaded M-East / M-West areas, landmarks,
    scale bar, a small Mumbai locator and a "Show all of Mumbai" button (same as the map mock-up) ---------- */
 const BLD_PAIRS=[[3,4],[6,7]];
-// 23 Oct: CARTO now asks for an API key ("API KEY REQUIRED" on the tiles); OpenStreetMap's own tiles need none
-const MAP_TILES="https://tile.openstreetmap.org/{z}/{x}/{y}.png", MAP_TILES2="https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
-// if OpenStreetMap refuses the tiles (e.g. inside the Android app), switch to Esri's street map — also no key
-function tiles(L,o){const ly=L.tileLayer(MAP_TILES,o);let bad=0,sw=false;ly.on("tileerror",()=>{if(!sw&&++bad>=3){sw=true;ly.setUrl(MAP_TILES2);if(o.attribution)ly.options.attribution="© Esri, OpenStreetMap contributors"}});return ly}
 const MUM_ST=[["Kurla",19.0655986,72.8791535],["Tilak Nagar",19.0655365,72.8912651],["Chembur",19.0623648,72.901708],["Govandi",19.0555001,72.9149323],["Mankhurd",19.0484319,72.9324532]];
 const MUM_CITY=[["CSMT",18.9398446,72.8354475],["Bandra",19.0548399,72.8406903],["Airport",19.0902177,72.862812],["Vashi",19.0632517,72.9988553],["Thane",19.186,72.9755]];
 function hull2(P){P=P.slice().sort((a,b)=>a[1]-b[1]||a[0]-b[0]);const cr=(o,a,b)=>(a[1]-o[1])*(b[0]-o[0])-(a[0]-o[0])*(b[1]-o[1]),lo=[],up=[];
   for(const p of P){while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],p)<=0)lo.pop();lo.push(p)}for(const p of P.slice().reverse()){while(up.length>=2&&cr(up[up.length-2],up[up.length-1],p)<=0)up.pop();up.push(p)}return lo.slice(0,-1).concat(up.slice(0,-1))}
 function mapContext(L,m,list){
-  L.control.scale({metric:true,imperial:false,position:innerWidth<700?"bottomleft":"bottomright"}).addTo(m);
+  L.control.scale({metric:true,imperial:false,position:"bottomright"}).addTo(m);
   const lab=(ll,html,cls,anchor,w)=>L.marker(ll,{icon:L.divIcon({className:"",html:`<div class="${cls}">${html}</div>`,iconSize:[w||140,18],iconAnchor:anchor||[(w||140)/2,9]}),interactive:false,keyboard:false}).addTo(m);
   [["E","#C2410C","M-East"],["W","#1D4ED8","M-West"]].forEach(([w,c,l])=>{const P=list.filter(s=>(w==="E")===isEast(s)).map(s=>[+s.lat,+s.lng]);if(P.length<3)return;
     const H=hull2(P),C=H.reduce((a,p)=>[a[0]+p[0]/H.length,a[1]+p[1]/H.length],[0,0]),G=H.map(p=>[C[0]+(p[0]-C[0])*1.12+(p[0]>C[0]?.0012:-.0012),C[1]+(p[1]-C[1])*1.12+(p[1]>C[1]?.0012:-.0012)]);
@@ -1253,7 +1249,7 @@ function mapInset(L,m,el,B,fit){
   const box=document.createElement("div");box.className="minset";box.innerHTML=`<div class="minmap"></div><div class="mincap">${esc(lang==="hi"?"मुंबई में यह कहाँ है":"Where this is in Mumbai")}</div>`;el.appendChild(box);
   ["mousedown","touchstart","dblclick","wheel","click"].forEach(e=>box.addEventListener(e,ev=>ev.stopPropagation(),{passive:true}));
   const ins=L.map(box.firstChild,{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,touchZoom:false,tap:false});
-  tiles(L,{maxZoom:19}).addTo(ins);
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:19}).addTo(ins);
   setTimeout(()=>{ins.invalidateSize();ins.fitBounds([[18.90,72.79],[19.22,73.03]])},60);
   L.rectangle(B.pad(0.6),{color:"#E85B25",weight:2.5,fillOpacity:.15,interactive:false}).addTo(ins);
   MUM_CITY.forEach(c=>{const lft=c[0]==="Bandra"||c[0]==="CSMT";L.circleMarker([c[1],c[2]],{radius:3,color:"#1c2330",weight:1,fillColor:"#1c2330",fillOpacity:1,interactive:false}).addTo(ins);L.marker([c[1],c[2]],{icon:L.divIcon({className:"",html:`<div class="mcity" style="text-align:${lft?"right":"left"}">${c[0]}</div>`,iconSize:[60,12],iconAnchor:lft?[64,6]:[-4,6]}),interactive:false}).addTo(ins)});
@@ -1289,7 +1285,7 @@ function wireMap(){
   const c=mapCfg(),list=mapSchools().filter(s=>s.lat!=null&&s.lng!=null),L2=MAP_LBL();
   loadLeaflet().then(L=>{if(!document.body.contains(el))return;el.innerHTML="";
     const m=geoMap=L.map(el,{zoomSnap:0.25,attributionControl:true});
-    tiles(L,{maxZoom:19,attribution:"© OpenStreetMap contributors"}).addTo(m);
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",{subdomains:"abcd",maxZoom:19,attribution:"© OpenStreetMap © CARTO"}).addTo(m);
     const placed=[],pts=[];
     // 23 Oct: schools in the same building (3+4, 6+7) share one pin, split in two colours when their steps differ
     const byNo={};list.forEach(s=>byNo[s.no]=s);const skip=new Set();
